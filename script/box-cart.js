@@ -72,7 +72,7 @@ const boxCart = () => {
     }
 
     const addProductToCart = () => {
-        let getCart = JSON.parse(localStorage.getItem('box-cart'))
+        let getCart = JSON.parse(localStorage.getItem('cart'))
 
         if (getCart) {
             const idProduct = settings.size
@@ -103,7 +103,7 @@ const boxCart = () => {
             }
         }
 
-        localStorage.setItem('box-cart', JSON.stringify(getCart))
+        localStorage.setItem('cart', JSON.stringify(getCart))
         createItemBox(Object.values(getCart))
     }
 
@@ -116,18 +116,18 @@ const boxCart = () => {
         if (e.target.closest('.cart__item')) {
             const cartID = e.target.closest('.cart__item').querySelector('.cart__name').textContent.trim()
             if (e.target.closest('.cart-counter__btn_plus')) {
-                const getCart = JSON.parse(localStorage.getItem('box-cart'))
+                const getCart = JSON.parse(localStorage.getItem('cart'))
 
                 const clickedGoods = Object.keys(getCart).find(good => good === cartID)
 
                 if (clickedGoods) {
                     getCart[cartID]['count'] += 1
                 }
-                localStorage.setItem('box-cart', JSON.stringify(getCart))
+                localStorage.setItem('cart', JSON.stringify(getCart))
                 createItemBox(Object.values(getCart))
             }
             if (e.target.closest('.cart-counter__btn_minus')) {
-                const getCart = JSON.parse(localStorage.getItem('box-cart'))
+                const getCart = JSON.parse(localStorage.getItem('cart'))
 
                 const clickedGoods = Object.keys(getCart).find(good => good === cartID)
 
@@ -136,18 +136,18 @@ const boxCart = () => {
                 } else {
                     delete getCart[cartID]
                 }
-                localStorage.setItem('box-cart', JSON.stringify(getCart))
+                localStorage.setItem('cart', JSON.stringify(getCart))
                 createItemBox(Object.values(getCart))
             }
             if (e.target.closest('.cart__del')) {
-                const getCart = JSON.parse(localStorage.getItem('box-cart'))
+                const getCart = JSON.parse(localStorage.getItem('cart'))
 
                 const clickedGoods = Object.keys(getCart).find(good => good === cartID)
 
                 if (clickedGoods) {
                     delete getCart[cartID]
                 }
-                localStorage.setItem('box-cart', JSON.stringify(getCart))
+                localStorage.setItem('cart', JSON.stringify(getCart))
                 createItemBox(Object.values(getCart))
             }
         }
@@ -184,7 +184,7 @@ const boxCart = () => {
 
     cartBtn.addEventListener('click', () => {
         if (JSON.parse(localStorage.getItem('cart'))) {
-            const keys = Object.values(JSON.parse(localStorage.getItem('box-cart')))
+            const keys = Object.values(JSON.parse(localStorage.getItem('cart')))
             createItemBox(keys)
         }
         overlayCart.classList.add('overlay_active')
