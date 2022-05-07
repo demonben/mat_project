@@ -1,0 +1,724 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Mat</title>
+    <link rel="stylesheet" href="./style/style.css">
+    <script src="./script/burger.js" defer></script>
+    <script src="./script/libs/swiper-bundle.min.js" defer></script>
+    <script src="./script/script.js" defer></script>
+    <script src="./script/main-cart.js" defer></script>
+</head>
+<body>
+<header class="header">
+    <div class="container">
+        <div class="header__inner">
+            <a href="#" class="logo header__logo">
+                <img src="./img/logo.png" alt="logo">
+            </a>
+            <div class="header__wr">
+                <a href="#" class="logo logo_mob header__logo">
+                    <img src="./img/logo.png" alt="logo">
+                </a>
+                <nav class="header-nav">
+                    <ul class="header-nav__list">
+                        <li>
+                            <a href="#" class="header__link header__link_open-menu">Товары</a>
+                            <ul class="header-nav__menu">
+                                <li>
+                                    <a href="#" class="header__link">
+                                        3D коврики
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="header__link">
+                                        Боксы в багажник
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="header__link">
+                                        Подушки
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="header__link">
+                                        Накидки на сиденья
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><a href="#" class="header__link">О нас</a></li>
+                        <li><a href="#" class="header__link">Галерея</a></li>
+                        <li><a href="#" class="header__link">Контакты</a></li>
+                    </ul>
+                </nav>
+                <div class="header-contacts">
+                    <span class="header-contacts__info">
+                        лучшее качество 3D ковриков в авто по адекватной цене
+                    </span>
+                    <div class="header-social">
+                        <a href="#" class="header-social__link">
+                            <svg width="100" height="97" viewBox="0 0 100 97" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_12_1254)">
+                                    <path d="M49.9868 8.70632C63.3426 8.70632 64.9242 8.76298 70.1767 8.9896C75.0583 9.19735 77.6943 9.99055 79.4516 10.6516C81.7752 11.5203 83.4545 12.5779 85.1923 14.2587C86.9496 15.9584 88.0236 17.5637 88.9218 19.8111C89.6052 21.5108 90.4253 24.0793 90.6401 28.7818C90.8744 33.881 90.933 35.4107 90.933 48.3097C90.933 61.2275 90.8744 62.7573 90.6401 67.8375C90.4253 72.559 89.6052 75.1085 88.9218 76.8083C88.0236 79.0557 86.9301 80.6798 85.1923 82.3607C83.4349 84.0604 81.7752 85.0991 79.4516 85.9678C77.6943 86.6288 75.0387 87.422 70.1767 87.6298C64.9047 87.8564 63.3231 87.9131 49.9868 87.9131C36.6309 87.9131 35.0493 87.8564 29.7968 87.6298C24.9153 87.422 22.2793 86.6288 20.5219 85.9678C18.1983 85.0991 16.5191 84.0415 14.7812 82.3607C13.0239 80.6609 11.95 79.0557 11.0518 76.8083C10.3683 75.1085 9.54825 72.5401 9.33347 67.8375C9.09915 62.7384 9.04058 61.2086 9.04058 48.3097C9.04058 35.3919 9.09915 33.8621 9.33347 28.7818C9.54825 24.0604 10.3683 21.5108 11.0518 19.8111C11.95 17.5637 13.0434 15.9396 14.7812 14.2587C16.5386 12.559 18.1983 11.5203 20.5219 10.6516C22.2793 9.99055 24.9348 9.19735 29.7968 8.9896C35.0493 8.76298 36.6309 8.70632 49.9868 8.70632ZM49.9868 0C36.4161 0 34.7174 0.0566572 29.3868 0.283286C24.0757 0.509915 20.4243 1.34089 17.2611 2.53069C13.9611 3.77715 11.1689 5.4202 8.39622 8.12086C5.60399 10.8026 3.90522 13.5033 2.61649 16.6761C1.38635 19.7545 0.527204 23.2672 0.292891 28.4041C0.0585782 33.5788 0 35.2219 0 48.3475C0 61.473 0.0585782 63.1161 0.292891 68.2719C0.527204 73.4088 1.38635 76.9405 2.61649 79.9999C3.90522 83.1916 5.60399 85.8923 8.39622 88.5741C11.1689 91.2558 13.9612 92.9178 17.2415 94.1453C20.4243 95.3351 24.0561 96.1661 29.3672 96.3927C34.6978 96.6194 36.3966 96.676 49.9672 96.676C63.5379 96.676 65.2366 96.6194 70.5673 96.3927C75.8784 96.1661 79.5297 95.3351 82.693 94.1453C85.9733 92.9178 88.7656 91.2558 91.5383 88.5741C94.311 85.8923 96.0293 83.1916 97.2985 80.0188C98.5286 76.9405 99.3878 73.4277 99.6221 68.2908C99.8564 63.135 99.915 61.4919 99.915 48.3663C99.915 35.2408 99.8564 33.5977 99.6221 28.4419C99.3878 23.305 98.5286 19.7734 97.2985 16.7139C96.0683 13.5033 94.3696 10.8026 91.5773 8.12086C88.8046 5.43909 86.0124 3.77715 82.732 2.54957C79.5493 1.35977 75.9174 0.5288 70.6063 0.302172C65.2562 0.0566572 63.5574 0 49.9868 0Z" fill="white"/>
+                                    <path d="M49.9869 23.5137C35.8109 23.5137 24.3101 34.6374 24.3101 48.3484C24.3101 62.0594 35.8109 73.1831 49.9869 73.1831C64.1628 73.1831 75.6637 62.0594 75.6637 48.3484C75.6637 34.6374 64.1628 23.5137 49.9869 23.5137ZM49.9869 64.4579C40.7901 64.4579 33.3311 57.2436 33.3311 48.3484C33.3311 39.4532 40.7901 32.2389 49.9869 32.2389C59.1836 32.2389 66.6426 39.4532 66.6426 48.3484C66.6426 57.2436 59.1836 64.4579 49.9869 64.4579Z" fill="white"/>
+                                    <path d="M82.6736 22.5303C82.6736 25.7409 79.979 28.3283 76.6791 28.3283C73.3596 28.3283 70.6846 25.722 70.6846 22.5303C70.6846 19.3198 73.3792 16.7324 76.6791 16.7324C79.979 16.7324 82.6736 19.3387 82.6736 22.5303Z" fill="white"/>
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_12_1254">
+                                        <rect width="99.9735" height="96.6949" fill="white"/>
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                        </a>
+                        <a href="#" class="header-social__link">
+                            <svg width="101" height="98" viewBox="0 0 101 98" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_12_1255)">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M7.26383 7.59921C0.249023 14.384 0.249023 25.3073 0.249023 47.1474V51.1764C0.249023 73.0133 0.249023 83.9399 7.26383 90.7246C14.2786 97.5094 25.5723 97.5094 48.153 97.5094H52.3186C74.8959 97.5094 86.1929 97.5094 93.2078 90.7246C100.223 83.9399 100.223 73.0165 100.223 51.1764V47.1474C100.223 25.3105 100.223 14.384 93.2078 7.59921C86.1929 0.814453 74.8993 0.814453 52.3186 0.814453H48.153C25.5757 0.814453 14.2786 0.814453 7.26383 7.59921ZM20.0371 31.0316H27.3251C29.188 31.0316 29.8878 31.8213 30.5876 33.7745C34.1533 43.8179 40.1651 52.5978 42.6344 52.5978C43.5642 52.5978 43.9874 52.1852 43.9874 49.9065V39.5247C43.8205 36.5693 42.7529 35.2908 41.9623 34.344C41.4741 33.7594 41.0915 33.3012 41.0915 32.6529C41.0915 31.8632 41.788 31.0316 42.9443 31.0316H54.4013C55.9476 31.0316 56.4841 31.831 56.4841 33.623V47.5922C56.4841 49.0846 57.1539 49.6099 57.6171 49.6099C58.5436 49.6099 59.3167 49.0846 61.0162 47.4407C66.2682 41.7648 69.9739 33.0268 69.9739 33.0268C70.4371 31.9792 71.2935 31.0316 73.1464 31.0316H80.4344C82.6405 31.0316 83.1071 32.1307 82.6405 33.623C81.7141 37.7326 72.8331 49.8323 72.8331 49.8323C72.06 51.0281 71.7501 51.6244 72.8331 52.9685C73.2153 53.4863 74.0307 54.2594 74.963 55.1432C75.9166 56.0472 76.9924 57.067 77.8518 58.0482C80.9843 61.4551 83.3437 64.3301 84.0001 66.3091C84.6033 68.2978 83.5603 69.3067 81.4775 69.3067H74.1861C72.234 69.3067 71.2519 68.2493 69.1279 65.9627C68.2278 64.9936 67.1226 63.8038 65.6517 62.3801C61.3228 58.3479 59.4733 57.8258 58.3903 57.8258C56.924 57.8258 56.4841 58.2287 56.4841 60.2432V66.567C56.4841 68.2978 55.9109 69.3067 51.2755 69.3067C43.5542 69.3067 35.0664 64.7717 29.0447 56.4044C20.0071 44.1563 17.5377 34.893 17.5377 33.0268C17.5377 31.9792 17.9543 31.0316 20.0371 31.0316Z" fill="white"/>
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_12_1255">
+                                        <rect width="99.9735" height="96.6949" fill="white" transform="translate(0.249023 0.814453)"/>
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                        </a>
+                    </div>
+                    <a href="tel:+79148046666" class="header__link header__phone">+7(914)804-6666</a>
+                </div>
+                <button class="header__close">
+                    <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M13.4099 11.9999L19.7099 5.70994C19.8982 5.52164 20.004 5.26624 20.004 4.99994C20.004 4.73364 19.8982 4.47825 19.7099 4.28994C19.5216 4.10164 19.2662 3.99585 18.9999 3.99585C18.7336 3.99585 18.4782 4.10164 18.2899 4.28994L11.9999 10.5899L5.70994 4.28994C5.52164 4.10164 5.26624 3.99585 4.99994 3.99585C4.73364 3.99585 4.47824 4.10164 4.28994 4.28994C4.10164 4.47825 3.99585 4.73364 3.99585 4.99994C3.99585 5.26624 4.10164 5.52164 4.28994 5.70994L10.5899 11.9999L4.28994 18.2899C4.19621 18.3829 4.12182 18.4935 4.07105 18.6154C4.02028 18.7372 3.99414 18.8679 3.99414 18.9999C3.99414 19.132 4.02028 19.2627 4.07105 19.3845C4.12182 19.5064 4.19621 19.617 4.28994 19.7099C4.3829 19.8037 4.4935 19.8781 4.61536 19.9288C4.73722 19.9796 4.86793 20.0057 4.99994 20.0057C5.13195 20.0057 5.26266 19.9796 5.38452 19.9288C5.50638 19.8781 5.61698 19.8037 5.70994 19.7099L11.9999 13.4099L18.2899 19.7099C18.3829 19.8037 18.4935 19.8781 18.6154 19.9288C18.7372 19.9796 18.8679 20.0057 18.9999 20.0057C19.132 20.0057 19.2627 19.9796 19.3845 19.9288C19.5064 19.8781 19.617 19.8037 19.7099 19.7099C19.8037 19.617 19.8781 19.5064 19.9288 19.3845C19.9796 19.2627 20.0057 19.132 20.0057 18.9999C20.0057 18.8679 19.9796 18.7372 19.9288 18.6154C19.8781 18.4935 19.8037 18.3829 19.7099 18.2899L13.4099 11.9999Z" fill="#fff"></path>
+                    </svg>
+                </button>
+            </div>
+            <button class="header__cart">
+                <svg width="80" height="78" viewBox="0 0 80 78" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M62.6768 61.3328C64.8864 61.3328 67.0054 62.1817 68.5678 63.6929C70.1302 65.204 71.0079 67.2536 71.0079 69.3907C71.0079 71.5278 70.1302 73.5773 68.5678 75.0885C67.0054 76.5996 64.8864 77.4486 62.6768 77.4486C60.4673 77.4486 58.3482 76.5996 56.7858 75.0885C55.2234 73.5773 54.3457 71.5278 54.3457 69.3907C54.3457 67.2536 55.2234 65.204 56.7858 63.6929C58.3482 62.1817 60.4673 61.3328 62.6768 61.3328ZM62.6768 65.3617C61.572 65.3617 60.5125 65.7862 59.7313 66.5418C58.9501 67.2973 58.5113 68.3221 58.5113 69.3907C58.5113 70.4592 58.9501 71.484 59.7313 72.2396C60.5125 72.9952 61.572 73.4196 62.6768 73.4196C63.7816 73.4196 64.8411 72.9952 65.6223 72.2396C66.4035 71.484 66.8424 70.4592 66.8424 69.3907C66.8424 68.3221 66.4035 67.2973 65.6223 66.5418C64.8411 65.7862 63.7816 65.3617 62.6768 65.3617ZM25.1867 61.3328C27.3963 61.3328 29.5154 62.1817 31.0777 63.6929C32.6401 65.204 33.5179 67.2536 33.5179 69.3907C33.5179 71.5278 32.6401 73.5773 31.0777 75.0885C29.5154 76.5996 27.3963 77.4486 25.1867 77.4486C22.9772 77.4486 20.8581 76.5996 19.2957 75.0885C17.7334 73.5773 16.8556 71.5278 16.8556 69.3907C16.8556 67.2536 17.7334 65.204 19.2957 63.6929C20.8581 62.1817 22.9772 61.3328 25.1867 61.3328ZM25.1867 65.3617C24.082 65.3617 23.0224 65.7862 22.2412 66.5418C21.4601 67.2973 21.0212 68.3221 21.0212 69.3907C21.0212 70.4592 21.4601 71.484 22.2412 72.2396C23.0224 72.9952 24.082 73.4196 25.1867 73.4196C26.2915 73.4196 27.351 72.9952 28.1322 72.2396C28.9134 71.484 29.3523 70.4592 29.3523 69.3907C29.3523 68.3221 28.9134 67.2973 28.1322 66.5418C27.351 65.7862 26.2915 65.3617 25.1867 65.3617ZM71.0079 12.9853H13.8272L24.4369 37.159H58.5113C59.159 37.16 59.7979 37.014 60.3767 36.7327C60.9555 36.4514 61.4579 36.0427 61.8437 35.5394L74.3404 19.4236H74.3446C74.8065 18.8247 75.0872 18.1134 75.1553 17.3691C75.2233 16.6248 75.076 15.8768 74.7298 15.2088C74.3836 14.5409 73.8522 13.9792 73.195 13.5865C72.5377 13.1938 71.7805 12.9857 71.0079 12.9853ZM58.5113 41.188H24.6286L21.4377 47.4732L21.0212 49.2459C21.0212 50.3144 21.4601 51.3392 22.2412 52.0948C23.0224 52.8504 24.082 53.2749 25.1867 53.2749H71.0079V57.3038H25.1867C23.7362 57.3045 22.3105 56.9388 21.0509 56.243C19.7913 55.5472 18.7413 54.5453 18.0049 53.3365C17.2685 52.1277 16.8712 50.7539 16.8523 49.351C16.8333 47.9481 17.1935 46.5648 17.897 45.3378L20.8962 39.3991L5.76688 4.92739H0.193359V0.898438H8.52449L12.0611 8.95635H71.0079C72.582 8.95649 74.1238 9.38794 75.4548 10.2007C76.7858 11.0135 77.8515 12.1743 78.5284 13.5488C79.2054 14.9232 79.4659 16.455 79.2799 17.9668C79.0938 19.4786 78.4687 20.9084 77.4771 22.0907L65.3386 37.7473C64.5712 38.8101 63.5497 39.678 62.361 40.277C61.1723 40.8761 59.8516 41.1886 58.5113 41.188Z" fill="white"/>
+                </svg>
+            </button>
+            <button class="header-burger">
+                <svg width="27" height="22" viewBox="0 0 27 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_244_1906)">
+                        <path d="M-0.306641 20.1668H27.307V17.1113H-0.306641V20.1668ZM-0.306641 1.8335V4.88905H27.307V1.8335H-0.306641ZM-0.306641 12.5279H27.307V9.47239H-0.306641V12.5279Z" fill="#fff"/>
+                    </g>
+                    <defs>
+                        <clipPath id="clip0_244_1906">
+                            <rect width="27" height="22" fill="white"/>
+                        </clipPath>
+                    </defs>
+                </svg>
+            </button>
+        </div>
+    </div>
+</header>
+<main class="main">
+    <section class="constructor">
+        <div class="container">
+            <h1 class="constructor__title">
+                Конструктор ковриков
+            </h1>
+            <div class="constructor__inner">
+                <div class="constructor-set">
+                    <h2 class="constructor__subtitle">
+                        1. Комплектация
+                    </h2>
+                    <div class="constructor-set__choice">
+                        <input value="10000" name="choice" id="choice-1" aria-label="полный комплект" type="radio">
+                        <label class="choice-1" for="choice-1">
+                            <img src="./img/choice/1.png" alt="choice-1">
+                        </label>
+                        <input value="7000" name="choice" id="choice-2" aria-label="задние коврики" type="radio">
+                        <label class="choice-2" for="choice-2">
+                            <img src="./img/choice/2.png" alt="choice-2">
+                        </label>
+                        <input value="7000" name="choice" id="choice-3" aria-label="передние коврики" type="radio">
+                        <label class="choice-3" for="choice-3">
+                            <img src="./img/choice/3.png" alt="choice-3">
+                        </label>
+                        <input value="3000" name="choice" id="choice-4" aria-label="коврик водителя" type="radio">
+                        <label class="choice-4" for="choice-4">
+                            <img src="./img/choice/4.png" alt="choice-4">
+                        </label>
+                    </div>
+                    <div class="constructor-set__add">
+                        <div class="constructor-set__one">
+                            <input value="4000" id="row" aria-label="Ковры на 3 ряд сидений" type="checkbox">
+                            <label for="row">
+                                Ковры на 3 ряд сидений (4000р.)
+                                <span class="help">
+                                    <span class="help__button">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90 90">
+                                            <path fill="red" d="M65.449,6.169C59.748,2.057,52.588,0,43.971,0c-6.559,0-12.09,1.449-16.588,4.34    C20.25,8.871,16.457,16.562,16,27.412h16.531c0-3.158,0.922-6.203,2.766-9.137c1.846-2.932,4.975-4.396,9.389-4.396    c4.488,0,7.58,1.19,9.271,3.568c1.693,2.381,2.539,5.018,2.539,7.91c0,2.513-1.262,4.816-2.781,6.91    c-0.836,1.22-1.938,2.342-3.307,3.369c0,0-8.965,5.75-12.9,10.368c-2.283,2.681-2.488,6.692-2.689,12.449    c-0.014,0.409,0.143,1.255,1.576,1.255c1.433,0,11.582,0,12.857,0s1.541-0.951,1.559-1.362c0.09-2.098,0.326-3.167,0.707-4.377    c0.723-2.286,2.688-4.283,4.893-5.997l4.551-3.141c4.107-3.199,7.385-5.826,8.83-7.883C72.264,33.562,74,29.393,74,24.443    C74,16.373,71.148,10.281,65.449,6.169z M43.705,69.617c-5.697-0.17-10.398,3.771-10.578,9.951    c-0.178,6.178,4.293,10.258,9.99,10.426c5.949,0.177,10.523-3.637,10.701-9.814C53.996,74,49.654,69.793,43.705,69.617z"/>
+                                        </svg>
+                                    </span>
+                                    <span class="help__info">
+                                        Подробнее уточняйте у менеджера
+                                    </span>
+                                </span>
+                            </label>
+                        </div>
+                        <div class="constructor-set__two">
+                            <input value="6000" id="trunk" aria-label="Ковры в багажник" type="checkbox">
+                            <label for="trunk">
+                                Ковры в багажник (от 6000р.)
+                                <span class="help">
+                                    <span class="help__button">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90 90">
+                                            <path fill="red" d="M65.449,6.169C59.748,2.057,52.588,0,43.971,0c-6.559,0-12.09,1.449-16.588,4.34    C20.25,8.871,16.457,16.562,16,27.412h16.531c0-3.158,0.922-6.203,2.766-9.137c1.846-2.932,4.975-4.396,9.389-4.396    c4.488,0,7.58,1.19,9.271,3.568c1.693,2.381,2.539,5.018,2.539,7.91c0,2.513-1.262,4.816-2.781,6.91    c-0.836,1.22-1.938,2.342-3.307,3.369c0,0-8.965,5.75-12.9,10.368c-2.283,2.681-2.488,6.692-2.689,12.449    c-0.014,0.409,0.143,1.255,1.576,1.255c1.433,0,11.582,0,12.857,0s1.541-0.951,1.559-1.362c0.09-2.098,0.326-3.167,0.707-4.377    c0.723-2.286,2.688-4.283,4.893-5.997l4.551-3.141c4.107-3.199,7.385-5.826,8.83-7.883C72.264,33.562,74,29.393,74,24.443    C74,16.373,71.148,10.281,65.449,6.169z M43.705,69.617c-5.697-0.17-10.398,3.771-10.578,9.951    c-0.178,6.178,4.293,10.258,9.99,10.426c5.949,0.177,10.523-3.637,10.701-9.814C53.996,74,49.654,69.793,43.705,69.617z"/>
+                                        </svg>
+                                    </span>
+                                    <span class="help__info">
+                                        Цена меняется в зависимости от вашего авто. Точную цену уточнит менеджер.
+                                    </span>
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="constructor-filler">
+                    <h2 class="constructor__subtitle">
+                        2. Наполнитель
+                    </h2>
+                    <div class="constructor-filler__choice">
+                        <input checked name="filler-choice" id="skin" value="1" aria-label="" type="radio">
+                        <input name="filler-choice" id="eva" value="3" aria-label="Ева" type="radio">
+                        <label for="eva">EVA—коврик</label>
+                        <input name="filler-choice" id="kovr" value="2" aria-label="Ковролин" type="radio">
+                        <label for="kovr">Ковролин</label>
+                    </div>
+                    <div class="constructor-filler__product">
+                        <div class="constructor-filler__img">
+                            <img src="./img/products/product.png" alt="product">
+                        </div>
+                        <div class="constructor-filler-view">
+                            <div class="constructor-filler-view__item">
+                                <h3 class="constructor-filler-view__title">
+                                    3. Узор
+                                    <span class="help help_centerY">
+                                        <span class="help__button">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90 90">
+                                                <path fill="red" d="M65.449,6.169C59.748,2.057,52.588,0,43.971,0c-6.559,0-12.09,1.449-16.588,4.34    C20.25,8.871,16.457,16.562,16,27.412h16.531c0-3.158,0.922-6.203,2.766-9.137c1.846-2.932,4.975-4.396,9.389-4.396    c4.488,0,7.58,1.19,9.271,3.568c1.693,2.381,2.539,5.018,2.539,7.91c0,2.513-1.262,4.816-2.781,6.91    c-0.836,1.22-1.938,2.342-3.307,3.369c0,0-8.965,5.75-12.9,10.368c-2.283,2.681-2.488,6.692-2.689,12.449    c-0.014,0.409,0.143,1.255,1.576,1.255c1.433,0,11.582,0,12.857,0s1.541-0.951,1.559-1.362c0.09-2.098,0.326-3.167,0.707-4.377    c0.723-2.286,2.688-4.283,4.893-5.997l4.551-3.141c4.107-3.199,7.385-5.826,8.83-7.883C72.264,33.562,74,29.393,74,24.443    C74,16.373,71.148,10.281,65.449,6.169z M43.705,69.617c-5.697-0.17-10.398,3.771-10.578,9.951    c-0.178,6.178,4.293,10.258,9.99,10.426c5.949,0.177,10.523-3.637,10.701-9.814C53.996,74,49.654,69.793,43.705,69.617z"/>
+                                            </svg>
+                                        </span>
+                                        <span class="help__info">
+                                            Не ко всем вариантам узоров есть варианты цветов кожи и строчек на ней, поэтому внимательно выбирайте свою цветовую конфигурацию.
+                                        </span>
+                                    </span>
+                                </h3>
+                                <div class="constructor-filler-view__patterns">
+                                    <input data-pattern="skin-color-selector-romb-1" value="1" name="pattern" id="pattern-1" aria-label="" type="radio">
+                                    <label class="constructor-filler-view__label constructor-filler-view__label_1" for="pattern-1">
+                                        <img src="./img/patterns/1.png" alt="pattern-1">
+                                    </label>
+                                    <input data-pattern="skin-color-selector-romb-2" value="2" name="pattern" id="pattern-2" aria-label="" type="radio">
+                                    <label class="constructor-filler-view__label constructor-filler-view__label_2" for="pattern-2">
+                                        <img src="./img/patterns/2.png" alt="pattern-2">
+                                    </label>
+                                    <input data-pattern="skin-color-selector-romb-3" value="3" name="pattern" id="pattern-3" aria-label="" type="radio">
+                                    <label class="constructor-filler-view__label constructor-filler-view__label_3" for="pattern-3">
+                                        <img src="./img/patterns/3.png" alt="pattern-3">
+                                    </label>
+                                    <input data-pattern="skin-color-selector-square" value="4" name="pattern" id="pattern-4" aria-label="" type="radio">
+                                    <label class="constructor-filler-view__label constructor-filler-view__label_4" for="pattern-4">
+                                        <img src="./img/patterns/4.png" alt="pattern-4">
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="constructor-filler-view__item">
+                                <h3 class="constructor-filler-view__title">
+                                    4. Цвет кожи
+                                </h3>
+                                <select class="constructor-select" aria-label="" name="skin-color-selector" id="skin-color-selector-romb-1">
+                                    <option selected>Цвета</option>
+                                    <option aria-label="Чёрный" value="1">Чёрный</option>
+                                    <option aria-label="Синий" value="2">Синий</option>
+                                    <option aria-label="Рыжий" value="3">Рыжий</option>
+                                    <option aria-label="Бордовый" value="4">Бордовый</option>
+                                    <option aria-label="Серый" value="5">Серый</option>
+                                    <option aria-label="Коричневый" value="6">Коричневый</option>
+                                    <option aria-label="Бежевый" value="7">Бежевый</option>
+                                </select>
+                                <select class="constructor-select" aria-label="" name="skin-color-selector" id="skin-color-selector-romb-2">
+                                    <option selected>Цвета</option>
+                                    <option aria-label="Чёрный" value="1">Чёрный</option>
+                                    <option aria-label="Серый" value="5">Серый</option>
+                                    <option aria-label="Коричневый" value="6">Коричневый</option>
+                                    <option aria-label="Бежевый" value="7">Бежевый</option>
+                                </select>
+                                <select class="constructor-select" aria-label="" name="skin-color-selector" id="skin-color-selector-romb-3">
+                                    <option selected>Цвета</option>
+                                    <option aria-label="Чёрный" value="1">Чёрный</option>
+                                    <option aria-label="Синий" value="2">Синий</option>
+                                    <option aria-label="Бежевый" value="7">Бежевый</option>
+                                </select>
+                                <select class="constructor-select" aria-label="" name="skin-color-selector" id="skin-color-selector-square">
+                                    <option selected>Цвета</option>
+                                    <option aria-label="Чёрный" value="1">Чёрный</option>
+                                </select>
+                                <div class="constructor-filler-view__skin constructor-filler-view__skin_romb-1-black">
+                                    <input value="1" name="skin-color-romb" id="skin-color-romb-black-1" aria-label="Чёрная" type="radio">
+                                    <label class="constructor-filler-view__black" for="skin-color-romb-black-1">
+                                        <img src="./img/patterns/patterns-1/black.svg" alt="black">
+                                    </label>
+                                    <input value="2" name="skin-color-romb" id="skin-color-romb-black-2" aria-label="Белая" type="radio">
+                                    <label class="constructor-filler-view__white" for="skin-color-romb-black-2">
+                                        <img src="./img/patterns/patterns-1/black-white.svg" alt="white">
+                                    </label>
+                                    <input value="3" name="skin-color-romb" id="skin-color-romb-black-3" aria-label="Золотая" type="radio">
+                                    <label class="constructor-filler-view__gold" for="skin-color-romb-black-3">
+                                        <img src="./img/patterns/patterns-1/black-gold.svg" alt="gold">
+                                    </label>
+                                    <input value="4" name="skin-color-romb" id="skin-color-romb-black-4" aria-label="Голубая" type="radio">
+                                    <label class="constructor-filler-view__blue" for="skin-color-romb-black-4">
+                                        <img src="./img/patterns/patterns-1/black-blue.svg" alt="blue">
+                                    </label>
+                                    <input value="8" name="skin-color-romb" id="skin-color-romb-black-8" aria-label="Красная" type="radio">
+                                    <label class="constructor-filler-view__red" for="skin-color-romb-black-8">
+                                        <img src="./img/patterns/patterns-1/black-red.svg" alt="red">
+                                    </label>
+                                </div>
+                                <div class="constructor-filler-view__skin constructor-filler-view__skin_romb-1-blue">
+                                    <input value="1" name="skin-color-romb" id="skin-color-romb-blue-1" aria-label="Чёрная" type="radio">
+                                    <label class="constructor-filler-view__black" for="skin-color-romb-blue-1">
+                                        <img src="./img/patterns/patterns-1/blue-black.svg" alt="black">
+                                    </label>
+                                </div>
+                                <div class="constructor-filler-view__skin constructor-filler-view__skin_romb-1-gold">
+                                    <input value="3" name="skin-color-romb" id="skin-color-romb-gold-1" aria-label="Золотая" type="radio">
+                                    <label class="constructor-filler-view__gold" for="skin-color-romb-gold-1">
+                                        <img src="./img/patterns/patterns-1/gold.svg" alt="gold">
+                                    </label>
+                                </div>
+                                <div class="constructor-filler-view__skin constructor-filler-view__skin_romb-1-burgundy">
+                                    <input value="1" name="skin-color-romb" id="skin-color-romb-burgundy-1" aria-label="Чёрная" type="radio">
+                                    <label class="constructor-filler-view__black" for="skin-color-romb-burgundy-1">
+                                        <img src="./img/patterns/patterns-1/red-black.svg" alt="black">
+                                    </label>
+                                </div>
+                                <div class="constructor-filler-view__skin constructor-filler-view__skin_romb-1-gray">
+                                    <input value="2" name="skin-color-romb" id="skin-color-romb-gray-1" aria-label="Белая" type="radio">
+                                    <label class="constructor-filler-view__white" for="skin-color-romb-gray-1">
+                                        <img src="./img/patterns/patterns-1/gray-white.svg" alt="white">
+                                    </label>
+                                    <input value="1" name="skin-color-romb" id="skin-color-romb-gray-2" aria-label="Чёрная" type="radio">
+                                    <label class="constructor-filler-view__black" for="skin-color-romb-gray-2">
+                                        <img src="./img/patterns/patterns-1/gray-black.svg" alt="black">
+                                    </label>
+                                </div>
+                                <div class="constructor-filler-view__skin constructor-filler-view__skin_romb-1-brown">
+                                    <input value="6" name="skin-color-romb" id="skin-color-romb-brown-1" aria-label="Коричневая" type="radio">
+                                    <label class="constructor-filler-view__brown" for="skin-color-romb-brown-1">
+                                        <img src="./img/patterns/patterns-1/brown.svg" alt="brown">
+                                    </label>
+                                    <input value="1" name="skin-color-romb" id="skin-color-romb-brown-2" aria-label="Чёрная" type="radio">
+                                    <label class="constructor-filler-view__black" for="skin-color-romb-brown-2">
+                                        <img src="./img/patterns/patterns-1/brown-black.svg" alt="black">
+                                    </label>
+                                    <input value="3" name="skin-color-romb" id="skin-color-romb-brown-3" aria-label="Золотая" type="radio">
+                                    <label class="constructor-filler-view__gold" for="skin-color-romb-brown-3">
+                                        <img src="./img/patterns/patterns-1/brown-gold.svg" alt="gold">
+                                    </label>
+                                </div>
+                                <div class="constructor-filler-view__skin constructor-filler-view__skin_romb-1-sand">
+                                    <input value="7" name="skin-color-romb" id="skin-color-romb-sand-1" aria-label="Бежевая" type="radio">
+                                    <label class="constructor-filler-view__sand" for="skin-color-romb-sand-1">
+                                        <img src="./img/patterns/patterns-1/sand.svg" alt="sand">
+                                    </label>
+                                </div>
+                                <div class="constructor-filler-view__skin constructor-filler-view__skin_romb-2-black">
+                                    <input value="1" name="skin-color-romb" id="skin-color-romb-black-2-1" aria-label="Чёрная" type="radio">
+                                    <label class="constructor-filler-view__black" for="skin-color-romb-black-2-1">
+                                        <img src="./img/patterns/patterns-2/black.svg" alt="black">
+                                    </label>
+                                    <input value="2" name="skin-color-romb" id="skin-color-romb-black-2-2" aria-label="Белая" type="radio">
+                                    <label class="constructor-filler-view__white" for="skin-color-romb-black-2-2">
+                                        <img src="./img/patterns/patterns-2/black-white.svg" alt="white">
+                                    </label>
+                                    <input value="3" name="skin-color-romb" id="skin-color-romb-black-2-3" aria-label="Золотая" type="radio">
+                                    <label class="constructor-filler-view__gold" for="skin-color-romb-black-2-3">
+                                        <img src="./img/patterns/patterns-2/black-gold.svg" alt="gold">
+                                    </label>
+                                    <input value="8" name="skin-color-romb" id="skin-color-romb-black-2-8" aria-label="Красная" type="radio">
+                                    <label class="constructor-filler-view__red" for="skin-color-romb-black-2-8">
+                                        <img src="./img/patterns/patterns-2/black-red.svg" alt="red">
+                                    </label>
+                                </div>
+                                <div class="constructor-filler-view__skin constructor-filler-view__skin_romb-2-gray">
+                                    <input value="1" name="skin-color-romb" id="skin-color-romb-gray-2-1" aria-label="Чёрная" type="radio">
+                                    <label class="constructor-filler-view__black" for="skin-color-romb-gray-2-1">
+                                        <img src="./img/patterns/patterns-2/gray-black.svg" alt="black">
+                                    </label>
+                                </div>
+                                <div class="constructor-filler-view__skin constructor-filler-view__skin_romb-2-brown">
+                                    <input value="5" name="skin-color-romb" id="skin-color-romb-brown-2-1" aria-label="Серая" type="radio">
+                                    <label class="constructor-filler-view__gray" for="skin-color-romb-brown-2-1">
+                                        <img src="./img/patterns/patterns-2/brown-white.svg" alt="gray">
+                                    </label>
+                                    <input value="1" name="skin-color-romb" id="skin-color-romb-brown-2-2" aria-label="Чёрная" type="radio">
+                                    <label class="constructor-filler-view__black" for="skin-color-romb-brown-2-2">
+                                        <img src="./img/patterns/patterns-2/brown-black.svg" alt="black">
+                                    </label>
+                                </div>
+                                <div class="constructor-filler-view__skin constructor-filler-view__skin_romb-3-black">
+                                    <input value="1" name="skin-color-romb" id="skin-color-romb-black-3-1" aria-label="Чёрная" type="radio">
+                                    <label class="constructor-filler-view__black" for="skin-color-romb-black-3-1">
+                                        <img src="./img/patterns/patterns-3/black.svg" alt="black">
+                                    </label>
+                                </div>
+                                <div class="constructor-filler-view__skin constructor-filler-view__skin_romb-3-blue">
+                                    <input value="4" name="skin-color-romb" id="skin-color-romb-blue-3-1" aria-label="Синяя" type="radio">
+                                    <label class="constructor-filler-view__blue" for="skin-color-romb-blue-3-1">
+                                        <img src="./img/patterns/patterns-3/blue.svg" alt="blue">
+                                    </label>
+                                </div>
+                                <div class="constructor-filler-view__skin constructor-filler-view__skin_square-black">
+                                    <input value="1" name="skin-color-romb" id="skin-color-square-black-1" aria-label="Чёрная" type="radio">
+                                    <label class="constructor-filler-view__black" for="skin-color-square-black-1">
+                                        <img src="./img/patterns/patterns-4/black.svg" alt="black">
+                                    </label>
+                                    <input value="2" name="skin-color-romb" id="skin-color-square-black-2" aria-label="Белая" type="radio">
+                                    <label class="constructor-filler-view__white" for="skin-color-square-black-2">
+                                        <img src="./img/patterns/patterns-4/black-white.svg" alt="white">
+                                    </label>
+                                    <input value="4" name="skin-color-romb" id="skin-color-square-black-3" aria-label="Синяя" type="radio">
+                                    <label class="constructor-filler-view__blue" for="skin-color-square-black-3">
+                                        <img src="./img/patterns/patterns-4/black-blue.svg" alt="blue">
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="constructor-filler-view__item display_none">
+                                <h3 class="constructor-filler-view__title">
+                                    5. Цвет наполнителя
+                                </h3>
+                                <div class="constructor-filler-view__fillers active_flex">
+                                    <input value="1" name="filler-color" id="filler-color-1" aria-label="" type="radio">
+                                    <label class="constructor-filler-view__black" for="filler-color-1"></label>
+                                    <input value="2" name="filler-color" id="filler-color-2" aria-label="" type="radio">
+                                    <label class="constructor-filler-view__gray" for="filler-color-2"></label>
+                                    <input value="3" name="filler-color" id="filler-color-3" aria-label="" type="radio">
+                                    <label class="constructor-filler-view__brown" for="filler-color-3"></label>
+                                    <input value="4" name="filler-color" id="filler-color-4" aria-label="" type="radio">
+                                    <label class="constructor-filler-view__blue" for="filler-color-4"></label>
+                                    <input value="5" name="filler-color" id="filler-color-5" aria-label="" type="radio">
+                                    <label class="constructor-filler-view__red" for="filler-color-5"></label>
+                                    <input value="6" name="filler-color" id="filler-color-6" aria-label="" type="radio">
+                                    <label class="constructor-filler-view__sand" for="filler-color-6"></label>
+                                </div>
+                                <div class="constructor-filler-view__fillers constructor-filler-view__fillers_eva">
+                                    <input value="1" name="filler-color-eva" id="filler-color-eva-1" aria-label="" type="radio">
+                                    <label class="constructor-filler-view__black" for="filler-color-eva-1"></label>
+                                    <input value="2" name="filler-color-eva" id="filler-color-eva-2" aria-label="" type="radio">
+                                    <label class="constructor-filler-view__gray" for="filler-color-eva-2"></label>
+                                </div>
+                            </div>
+                            <div class="constructor-filler-view__item">
+                                <h3 class="constructor-filler-view__title">
+                                    6. Цвет канта
+                                </h3>
+                                <div class="constructor-filler-view__filler">
+                                    <select class="constructor-select" aria-label="" name="edging-filler-color" id="edging-filler-color">
+                                        <option selected>Наполнителя</option>
+                                        <option value="1">Чёрный</option>
+                                        <option value="2">Серый</option>
+                                        <option value="3">Красный</option>
+                                        <option value="4">Синий</option>
+                                        <option value="5">Рыжий</option>
+                                        <option value="6">Коричневый</option>
+                                    </select>
+                                    <select class="constructor-select display_none" aria-label="" name="edging-color" id="edging-color">
+                                        <option selected>Кожи</option>
+                                        <option value="1">Чёрный</option>
+                                        <option value="2">Серый</option>
+                                        <option value="3">Красный</option>
+                                        <option value="4">Синий</option>
+                                        <option value="5">Рыжий</option>
+                                        <option value="6">Серый</option>
+                                        <option value="7">Коричневый</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="constructor-footer">
+                    <div class="constructor-footer__checkbox">
+                        <input value="500" id="for-foot" aria-label="Подпятник" type="checkbox">
+                        <label for="for-foot">Подпятник</label>
+                        <input value="300" id="nameplate" aria-label="Шильдик" type="checkbox">
+                        <label for="nameplate">Шильдик</label>
+                    </div>
+                    <div class="constructor-footer__price">
+                        <input placeholder="Авто, год выпуска" id="auto-year" aria-label="" type="text">
+                        <div class="constructor-footer__buy">
+                            <div class="constructor-footer__sum">
+                                Цена: <span>0</span> р.
+                            </div>
+                            <button class="constructor-footer__button">
+                                В корзину
+                            </button>
+                            <span class="constructor__error">такой конфигурации нет</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="advantage">
+        <div class="container">
+            <h2 class="advantage__title">
+                Преимущества наших изделий
+            </h2>
+            <div class="advantage__inner advantage__inner_mb">
+                <div class="advantage-item">
+                    <div class="advantage-item__img">
+                        <svg width="50" height="50" viewBox="0 0 210 210" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M105 19.2759C117.576 19.2759 130.03 21.7425 141.649 26.5349C153.268 31.3272 163.825 38.3516 172.718 47.2068C181.611 56.0619 188.665 66.5746 193.478 78.1444C198.291 89.7143 200.768 102.115 200.768 114.638C200.768 127.161 198.291 139.562 193.478 151.131C188.665 162.701 181.611 173.214 172.718 182.069C163.825 190.924 153.268 197.949 141.649 202.741C130.03 207.533 117.576 210 105 210C79.6008 210 55.2418 199.953 37.2818 182.069C19.3218 164.185 9.23203 139.93 9.23203 114.638C9.23203 89.3463 19.3218 65.0906 37.2818 47.2068C55.2418 29.3229 79.6008 19.2759 105 19.2759ZM105 31.9908C82.9873 31.9908 61.8762 40.6982 46.3109 56.1976C30.7456 71.6969 22.0011 92.7185 22.0011 114.638C22.0011 136.557 30.7456 157.579 46.3109 173.078C61.8762 188.578 82.9873 197.285 105 197.285C127.013 197.285 148.124 188.578 163.689 173.078C179.254 157.579 187.999 136.557 187.999 114.638C187.999 92.7185 179.254 71.6969 163.689 56.1976C148.124 40.6982 127.013 31.9908 105 31.9908ZM98.6155 57.4207H111.385V112.896L150.305 130.964L144.903 142.484L98.6155 120.995V57.4207ZM152.884 9.73964L161.094 0L210 40.8658L201.79 50.6055L152.884 9.73964ZM57.116 9.73964L8.21051 50.6055L0 40.8658L48.9055 0L57.116 9.73964Z" fill="#CD1829"/>
+                        </svg>
+                    </div>
+                    <div class="advantage-item__text">
+                        <h3 class="advantage-item__title">
+                            Быстрое производство
+                        </h3>
+                        <div class="advantage-item__info">
+                            Изготовление от 1 дня с момента оплаты. Отправка заказа компанией “Деловые линии”
+                        </div>
+                    </div>
+                </div>
+                <div class="advantage-item">
+                    <div class="advantage-item__img">
+                        <svg width="50" height="50" viewBox="0 0 210 210" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M205.343 49.0876C203.507 47.0658 201.277 45.7657 198.908 45.3355C196.538 44.9054 194.124 45.3627 191.943 46.6551L145.568 73.8347C145.15 74.0841 144.676 74.1162 144.24 73.9246C143.805 73.733 143.44 73.3317 143.22 72.801L116.218 8.7056C115.107 6.06706 113.48 3.86854 111.507 2.33785C109.535 0.807164 107.287 0 104.999 0C102.71 0 100.462 0.807164 98.4896 2.33785C96.5169 3.86854 94.8904 6.06706 93.7788 8.7056L66.7774 72.7998C66.5562 73.3304 66.1916 73.7317 65.7561 73.9237C65.3207 74.1157 64.8464 74.0843 64.4277 73.8359L18.0462 46.6502C15.8626 45.3709 13.4515 44.9208 11.0844 45.3506C8.71729 45.7804 6.48816 47.073 4.64796 49.083C2.80776 51.0929 1.42955 53.7404 0.668478 56.7273C-0.092589 59.7142 -0.206292 62.922 0.34017 65.9895L23.668 196.965C24.056 199.183 24.783 201.273 25.8045 203.108C26.8259 204.943 28.1204 206.484 29.6088 207.636C31.1064 208.799 32.7659 209.553 34.4887 209.853C36.2115 210.153 37.9625 209.993 39.6376 209.383C82.3965 193.816 127.554 193.811 170.315 209.368C171.99 209.976 173.74 210.135 175.462 209.835C177.185 209.535 178.843 208.781 180.341 207.62C181.828 206.467 183.122 204.927 184.143 203.094C185.165 201.26 185.892 199.171 186.281 196.955L209.65 65.9991C210.206 62.9312 210.097 59.719 209.336 56.7288C208.574 53.7386 207.191 51.0909 205.343 49.0876ZM198.94 62.6768L175.571 193.633C175.518 193.946 175.416 194.241 175.272 194.5C175.128 194.759 174.945 194.976 174.734 195.137C174.513 195.308 174.268 195.419 174.014 195.462C173.76 195.505 173.501 195.48 173.255 195.387C128.569 179.127 81.3785 179.133 36.6956 195.405C36.449 195.498 36.1906 195.524 35.9362 195.481C35.6817 195.438 35.4366 195.327 35.2159 195.155C35.0053 194.993 34.8221 194.776 34.678 194.517C34.5338 194.258 34.4317 193.963 34.3779 193.649L11.0492 62.6707C10.9625 62.2325 10.9745 61.7705 11.084 61.3412C11.1934 60.9119 11.3954 60.534 11.6653 60.2539C11.9863 59.8923 12.3929 59.6897 12.815 59.6809C13.079 59.6842 13.3395 59.7608 13.5796 59.9057L59.961 87.0914C62.8893 88.8295 66.2066 89.049 69.2522 87.7063C72.2977 86.3635 74.8478 83.557 76.3946 79.8459L103.396 15.7505C103.555 15.3734 103.787 15.0591 104.069 14.8403C104.35 14.6215 104.671 14.5062 104.999 14.5062C105.326 14.5062 105.647 14.6215 105.928 14.8403C106.21 15.0591 106.442 15.3734 106.601 15.7505L133.603 79.8471C135.15 83.5581 137.7 86.3645 140.745 87.7071C143.791 89.0497 147.108 88.8298 150.036 87.0914L196.411 59.9106C196.723 59.7277 197.068 59.6634 197.406 59.7248C197.744 59.7862 198.063 59.971 198.326 60.2583C198.588 60.5456 198.785 60.9239 198.894 61.3508C199.003 61.7777 199.019 62.2385 198.94 62.6768ZM139.806 154.551C139.664 156.333 139.027 157.981 138.019 159.18C137.01 160.38 135.7 161.044 134.342 161.046C134.148 161.046 133.954 161.033 133.76 161.006C114.638 158.359 95.3588 158.359 76.2369 161.006C75.517 161.11 74.7887 161.025 74.0938 160.757C73.3988 160.488 72.7509 160.041 72.1872 159.442C71.6235 158.842 71.1551 158.102 70.8089 157.263C70.4627 156.425 70.2454 155.504 70.1696 154.554C70.0939 153.605 70.161 152.645 70.3672 151.729C70.5735 150.814 70.9147 149.961 71.3715 149.22C71.8282 148.479 72.3913 147.864 73.0287 147.411C73.666 146.957 74.3649 146.674 75.0854 146.578C94.9727 143.822 115.024 143.822 134.912 146.578C136.362 146.779 137.693 147.733 138.611 149.228C139.529 150.723 139.959 152.638 139.806 154.551Z" fill="#CD1829"/>
+                        </svg>
+                    </div>
+                    <div class="advantage-item__text">
+                        <h3 class="advantage-item__title">
+                            Высокий уровень комфорта
+                        </h3>
+                        <div class="advantage-item__info">
+                            Покрытие коврика - это мягкий автомобильный ковролин, который легко чистится и придает домашний уют
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="advantage__inner">
+                <div class="advantage-item">
+                    <div class="advantage-item__img">
+                        <svg width="50" height="50" viewBox="0 0 210 210" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0 111.176V98.8235H210V111.176H0ZM98.8235 0H111.176V52.5L138.971 24.7059L148.235 32.9082L105 76.1435L61.7647 32.9082L71.0294 24.7059L98.8235 52.5V0ZM98.8235 210V157.5L71.0294 185.294L61.7647 177.092L105 133.856L148.235 177.092L138.971 185.294L111.176 157.5V210H98.8235Z" fill="#CD1829"/>
+                        </svg>
+                    </div>
+                    <div class="advantage-item__text">
+                        <h3 class="advantage-item__title">
+                            Идеальная геометрия
+                        </h3>
+                        <div class="advantage-item__info">
+                            Отлаженное производство и опытные мастера позволяют получить идеальный продукт
+                        </div>
+                    </div>
+                </div>
+                <div class="advantage-item">
+                    <div class="advantage-item__img">
+                        <svg width="50" height="50" viewBox="0 0 210 210" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M43.5769 0H166.423L210 61.5963L105 210L0 61.5963L43.5769 0ZM90.0574 11.0526L71.0945 55.2632H138.906L119.943 11.0526H90.0574ZM69.5645 66.3158L105 174.234L140.424 66.3158H69.5756H69.5645ZM18.1142 55.2632H58.9662L77.9292 11.0526H49.3842L18.1142 55.2632ZM16.9751 66.3158L93.1956 174.046L57.8271 66.3158H16.9751ZM191.886 55.2632L160.616 11.0526H132.071L151.034 55.2632H191.886ZM193.025 66.3158H152.173L116.804 174.046L193.025 66.3158Z" fill="#CD1829"/>
+                        </svg>
+                    </div>
+                    <div class="advantage-item__text">
+                        <h3 class="advantage-item__title">
+                            Роскошный вид авто
+                        </h3>
+                        <div class="advantage-item__info">
+                            Инженеры компании TheMat использовали передовые решения, чтобы максимально эффектно передать эстетику и стиль Вашего авто
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="advertising-slider">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide advertising-slider_box">
+                <div class="advertising-slider-item">
+                    <h2 class="advertising-slider__title">
+                        Бокс в багажник
+                    </h2>
+                    <p class="advertising-slider__text">
+                        Бокс в багажник - отличный способ грамотно распределить внутреннее пространство и сохранить порядок. Теперь все ваши вещи будут лежать на своих местах, а вам не придётся тратить много времени на поиски конкретного предмета или аксессуара.
+                    </p>
+                    <a href="#" class="advertising-slider__link">
+                        Купить
+                    </a>
+                </div>
+            </div>
+            <div class="swiper-slide advertising-slider_box">
+                <div class="advertising-slider-item">
+                    <h2 class="advertising-slider__title">
+                        Бокс в багажник
+                    </h2>
+                    <p class="advertising-slider__text">
+                        Бокс в багажник - отличный способ грамотно распределить внутреннее пространство и сохранить порядок. Теперь все ваши вещи будут лежать на своих местах, а вам не придётся тратить много времени на поиски конкретного предмета или аксессуара.
+                    </p>
+                    <a href="#" class="advertising-slider__link">
+                        Купить
+                    </a>
+                </div>
+            </div>
+            <div class="swiper-slide advertising-slider_box">
+                <div class="advertising-slider-item">
+                    <h2 class="advertising-slider__title">
+                        Бокс в багажник
+                    </h2>
+                    <p class="advertising-slider__text">
+                        Бокс в багажник - отличный способ грамотно распределить внутреннее пространство и сохранить порядок. Теперь все ваши вещи будут лежать на своих местах, а вам не придётся тратить много времени на поиски конкретного предмета или аксессуара.
+                    </p>
+                    <a href="#" class="advertising-slider__link">
+                        Купить
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="advertising-slider-pagination"></div>
+        <button class="box-constructor-slider__button box-constructor-slider__button_left">
+            <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M23.6842 15.7895H10.6579L15.7895 20.9211L14.7411 22.1053L7.63579 15L14.7411 7.89474L15.7895 9.07895L10.6579 14.2105H23.6842V15.7895ZM0 15C-2.93527e-08 13.0302 0.387986 11.0796 1.14181 9.25975C1.89563 7.43987 3.00052 5.78628 4.3934 4.3934C5.78628 3.00052 7.43986 1.89563 9.25975 1.14181C11.0796 0.387987 13.0302 0 15 0C16.9698 0 18.9204 0.387987 20.7403 1.14181C22.5601 1.89563 24.2137 3.00052 25.6066 4.3934C26.9995 5.78628 28.1044 7.43987 28.8582 9.25975C29.612 11.0796 30 13.0302 30 15C30 18.9782 28.4196 22.7936 25.6066 25.6066C22.7936 28.4196 18.9782 30 15 30C11.0218 30 7.20644 28.4196 4.3934 25.6066C1.58035 22.7936 5.92805e-08 18.9782 0 15ZM1.57895 15C1.57895 18.5595 2.99295 21.9732 5.50988 24.4901C8.02682 27.0071 11.4405 28.4211 15 28.4211C18.5595 28.4211 21.9732 27.0071 24.4901 24.4901C27.0071 21.9732 28.4211 18.5595 28.4211 15C28.4211 11.4405 27.0071 8.02682 24.4901 5.50988C21.9732 2.99295 18.5595 1.57895 15 1.57895C11.4405 1.57895 8.02682 2.99295 5.50988 5.50988C2.99295 8.02682 1.57895 11.4405 1.57895 15Z" fill="white"/>
+            </svg>
+        </button>
+        <button class="box-constructor-slider__button box-constructor-slider__button_right">
+            <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6.31579 14.2105H19.3421L14.2105 9.07895L15.2589 7.89474L22.3642 15L15.2589 22.1053L14.2105 20.9211L19.3421 15.7895H6.31579V14.2105ZM30 15C30 16.9698 29.612 18.9204 28.8582 20.7403C28.1044 22.5601 26.9995 24.2137 25.6066 25.6066C24.2137 26.9995 22.5601 28.1044 20.7403 28.8582C18.9204 29.612 16.9698 30 15 30C13.0302 30 11.0796 29.612 9.25975 28.8582C7.43987 28.1044 5.78628 26.9995 4.3934 25.6066C3.00052 24.2137 1.89563 22.5601 1.14181 20.7403C0.387986 18.9204 -2.93527e-08 16.9698 0 15C5.92805e-08 11.0218 1.58035 7.20644 4.3934 4.3934C7.20644 1.58035 11.0218 0 15 0C18.9782 0 22.7936 1.58035 25.6066 4.3934C28.4196 7.20644 30 11.0218 30 15ZM28.4211 15C28.4211 11.4405 27.0071 8.02682 24.4901 5.50988C21.9732 2.99295 18.5595 1.57895 15 1.57895C11.4405 1.57895 8.02682 2.99295 5.50988 5.50988C2.99295 8.02682 1.57895 11.4405 1.57895 15C1.57895 18.5595 2.99295 21.9732 5.50988 24.4901C8.02682 27.0071 11.4405 28.4211 15 28.4211C18.5595 28.4211 21.9732 27.0071 24.4901 24.4901C27.0071 21.9732 28.4211 18.5595 28.4211 15Z" fill="white"/>
+            </svg>
+        </button>
+    </section>
+    <section class="accordion">
+        <div class="container">
+            <div class="accordion__inner">
+                <ul class="accordion-item">
+                    <li>
+                        <span class="accordion-item__quest">
+                            Как происходит оплата?
+                            <span class="accordion-item__plus">
+                                <span></span>
+                                <span></span>
+                            </span>
+                        </span>
+                        <span class="accordion-item__ask">слитками</span>
+                    </li>
+                    <li>
+                        <span class="accordion-item__quest">
+                            Как выглядит отправленный товар?
+                            <span class="accordion-item__plus">
+                                <span></span>
+                                <span></span>
+                            </span>
+                        </span>
+                        <span class="accordion-item__ask">хорошо</span>
+                    </li>
+                    <li>
+                        <span class="accordion-item__quest">
+                            Как часто изнашиваются коврики?
+                            <span class="accordion-item__plus">
+                                <span></span>
+                                <span></span>
+                            </span>
+                        </span>
+                        <span class="accordion-item__ask">оч долго</span>
+                    </li>
+                    <li>
+                        <span class="accordion-item__quest">
+                            Могу ли я быть уверен в вашей компании?
+                            <span class="accordion-item__plus">
+                                <span></span>
+                                <span></span>
+                            </span>
+                        </span>
+                        <span class="accordion-item__ask">конечно</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section class="contacts">
+        <div class="container">
+            <div class="contacts__inner">
+                <div class="contacts__contact">
+                    <h2 class="contacts__title">
+                        Контакты The Mat
+                    </h2>
+                    <a href="tel:+79148046666" class="contacts__link">
+                        +7 (914)-804-6666
+                    </a>
+                    <a href="tel:+79644685344" class="contacts__link">
+                        +7 (964)-468-5344
+                    </a>
+                    <address>улица Николая Островского, 16</address>
+                    <div class="contacts-social">
+                        <a href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                <path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"/>
+                            </svg>
+                        </a>
+                        <a href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                <path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/>
+                            </svg>
+                        </a>
+                        <a href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                <path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="contacts__map">
+                    <script charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ab18cf7724fc8c894fcfbc899af68f208a393043260be00f6edbcccc0515387fa&amp;width=100%25&amp;height=400&amp;lang=ru_RU&amp;scroll=false"></script>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<footer class="footer">
+    <div class="container">
+        <div class="footer__inner">
+            <nav class="footer-nav">
+                <ul class="footer-nav__list">
+                    <li><a href="#" class="footer__link">Товары</a></li>
+                    <li><a href="#" class="footer__link">О нас</a></li>
+                    <li><a href="#" class="footer__link">Галерея</a></li>
+                    <li><a href="#" class="footer__link">Контакты</a></li>
+                </ul>
+            </nav>
+            <a href="#" class="logo footer__logo">
+                <img src="./img/logo.png" alt="logo">
+            </a>
+            <div class="footer__info">
+                <a href="mailto:thematchital@mail.ru">thematchital@mail.ru</a>
+                <span>ИП Колесников А. О.</span>
+                <span>ОГРНИП 319753600002938</span>
+            </div>
+        </div>
+    </div>
+</footer>
+<div class="overlay">
+    <div class="cart">
+        <h2 class="cart__title">
+            Ваш заказ
+        </h2>
+        <div class="cart__wr">
+
+        </div>
+        <div class="cart__box">
+
+        </div>
+        <button class="cart__close">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                <path d="M10.4099 9.00019L16.7099 2.71019C16.8982 2.52188 17.004 2.26649 17.004 2.00019C17.004 1.73388 16.8982 1.47849 16.7099 1.29019C16.5216 1.10188 16.2662 0.996094 15.9999 0.996094C15.7336 0.996094 15.4782 1.10188 15.2899 1.29019L8.99994 7.59019L2.70994 1.29019C2.52164 1.10188 2.26624 0.996094 1.99994 0.996094C1.73364 0.996094 1.47824 1.10188 1.28994 1.29019C1.10164 1.47849 0.995847 1.73388 0.995847 2.00019C0.995847 2.26649 1.10164 2.52188 1.28994 2.71019L7.58994 9.00019L1.28994 15.2902C1.19621 15.3831 1.12182 15.4937 1.07105 15.6156C1.02028 15.7375 0.994141 15.8682 0.994141 16.0002C0.994141 16.1322 1.02028 16.2629 1.07105 16.3848C1.12182 16.5066 1.19621 16.6172 1.28994 16.7102C1.3829 16.8039 1.4935 16.8783 1.61536 16.9291C1.73722 16.9798 1.86793 17.006 1.99994 17.006C2.13195 17.006 2.26266 16.9798 2.38452 16.9291C2.50638 16.8783 2.61698 16.8039 2.70994 16.7102L8.99994 10.4102L15.2899 16.7102C15.3829 16.8039 15.4935 16.8783 15.6154 16.9291C15.7372 16.9798 15.8679 17.006 15.9999 17.006C16.132 17.006 16.2627 16.9798 16.3845 16.9291C16.5064 16.8783 16.617 16.8039 16.7099 16.7102C16.8037 16.6172 16.8781 16.5066 16.9288 16.3848C16.9796 16.2629 17.0057 16.1322 17.0057 16.0002C17.0057 15.8682 16.9796 15.7375 16.9288 15.6156C16.8781 15.4937 16.8037 15.3831 16.7099 15.2902L10.4099 9.00019Z" fill="black"/>
+            </svg>
+        </button>
+        <button class="cart__button">
+            Оформить заказ
+        </button>
+    </div>
+</div>
+</body>
+</html>
