@@ -18,6 +18,7 @@ const boxCart = () => {
         strColor: '',
         endingColor: '',
         size: '',
+        name:'',
         price: ''
     }
 
@@ -40,7 +41,7 @@ const boxCart = () => {
             createItem.innerHTML = `
                         <div class="cart__info">
                             <h3 class="cart__name">
-                                ${item.size}
+                                ${item.name}
                             </h3>
                             <span style="margin: 0;" class="cart__color">
                                 ${item.skinColor}<br>${item.strColor}
@@ -87,6 +88,7 @@ const boxCart = () => {
                     strColor: settings.strColor,
                     endingColor: settings.endingColor,
                     size: settings.size,
+                    name:settings.size,
                     price: settings.price
                 }
             }
@@ -98,6 +100,7 @@ const boxCart = () => {
                     strColor: settings.strColor,
                     endingColor: settings.endingColor,
                     size: settings.size,
+                    name:settings.size,
                     price: settings.price,
                 }
             }
