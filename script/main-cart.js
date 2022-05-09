@@ -1,6 +1,3 @@
-'use strict'
-
-
 const addToCartBtn = document.querySelector('.constructor-footer__button')
 const overlayCart = document.querySelector('.overlay')
 const cart = document.querySelector('.cart')
@@ -25,12 +22,6 @@ const addToCartProduct = () => {
                             <span class="cart__color">
                                 Цвет: ${item.color}<br>Строчка: ${item.colorStr}
                             </span>
-                            <div class="cart__color">
-                                <div>${item.addOptions.row}</div>
-                                <div>${item.addOptions.trunk}</div>
-                                <div>${item.addOptions.foot}</div>
-                                <div>${item.addOptions.nameplate}</div>
-                            </div>
                             <span class="cart__id">
                                 id: <span class="cart__id_num">${item.id}</span>
                             </span>
@@ -76,8 +67,7 @@ const addToCartProduct = () => {
                     name: appData.numberRugs,
                     price: appData.fullPrice,
                     color: appData.skinColorName,
-                    colorStr: appData.colorStrName,
-                    addOptions: appData.otherServiceName
+                    colorStr: appData.colorStrName
                 }
             }
         } else {
@@ -88,8 +78,7 @@ const addToCartProduct = () => {
                     name: appData.numberRugs,
                     price: appData.fullPrice,
                     color: appData.skinColorName,
-                    colorStr: appData.colorStrName,
-                    addOptions: appData.otherServiceName
+                    colorStr: appData.colorStrName
                 }
             }
         }
