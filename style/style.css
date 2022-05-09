@@ -2546,6 +2546,26 @@ ul {
 .accordion-item__plus span:last-of-type {
   transform: rotate(90deg);
 }
+/* contact form */
+.page-wrapper {
+  width: 60%;
+  display: flex;
+  flex-flow: row nowrap;
+}
+section {
+  flex-basis: 70%;
+  margin: auto;
+}
+
+input:not([type="radio"]), textarea {
+  display: block;
+  margin-bottom: 2rem;
+  width: 20rem;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  padding: 0 1rem;
+  border-radius: 10px;
+}
 
 .contacts {
   padding: 50px 0;
