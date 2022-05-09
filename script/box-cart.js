@@ -6,17 +6,17 @@ const customerData = `
 <fieldset>
   <legend>Контактная информация</legend>
 
-   <p><label for="first-name"> Имя: </label>
-      <input type="text" id="first-name" name="first-name";"> 
+   <p><label for="first-name"> Имя*: </label>
+      <input type="text" id="first-name" name="first-name" placeholder="имя" class="_req _name"> 
 
    <p><label for="last-name"> Фамилия:  </label>
-  <input type="text" id="last-name" name="last-name"> 
+  <input type="text" id="last-name" name="last-name" placeholder="фамилия"> 
 
-  <p> <label>Номер телефона:</label>
-            <input type="text" class="phone" name="phone">
+  <p> <label>Номер телефона*:</label>
+            <input type="text" id="phone" name="phone" placeholder="+7962222222" class="_req _phone">
 
    <p><label for="email"> Email: </label>
-  <input type="email" id="email" name="email";"placeholder="user-email@gmail.com"> 
+  <input type="email" id="email" name="email" placeholder="user-email@gmail.com"> 
   </fieldset>
   </div>
 </div>
@@ -26,9 +26,49 @@ const customerData = `
 let createItem;
 let orderIsReady = false;
 
+const customerCartData = {
+  goods: "",
+  personalData: { name: "", lastName: "", phone: "" },
+};
 let customerName;
 let customerLastName;
 let customerPhone;
+let count = 0;
+
+let counter = () => {
+  let cartGoodsArray = Object.values(JSON.parse(localStorage.getItem("cart")));
+
+  cartGoodsArray.forEach((i) => {
+    count++;
+  });
+};
+counter();
+
+const collectingCustomerData = (name, lastName, phone) => {
+  let storage = JSON.parse(localStorage.getItem("cart"));
+  customerCartData.goods = storage;
+
+  customerCartData.personalData.name = name;
+  customerCartData.personalData.lastName = lastName;
+  customerCartData.personalData.phone = phone;
+
+  console.log(customerCartData);
+};
+
+const sendingCartData = () => {
+  console.log("sended");
+};
+
+const formValidate = (name, phone) => {
+  if (!name) {
+    alert("введите имя");
+    return false;
+  } else if (!phone) {
+    alert("введите номер");
+    return false;
+  }
+  return true;
+};
 
 const boxCart = () => {
   const skinColorItem = document.querySelector(".box-constructor__item_skin");
@@ -40,21 +80,29 @@ const boxCart = () => {
   const errorMess = document.querySelector(".constructor__error");
   const addToCartBtn = document.querySelector(".constructor-footer__button");
   const overlayCart = document.querySelector(".overlay");
+  const cartIconCount = document.querySelector(".cart-icon");
   const cart = document.querySelector(".cart");
   const cartBtn = document.querySelector(".header__cart");
   const cartInfo = cart.querySelector(".cart__wr");
   const cartClose = cart.querySelector(".cart__close");
   const cart__button = cart.querySelector(".cart__button");
 
+  cartIconCount.innerHTML = count;
+
   cart__button.addEventListener("click", () => {
     if (orderIsReady) {
-      console.log(localStorage.getItem("cart"));
       customerName = document.querySelector("#first-name");
-      console.log(
-        "🚀 ~ file: box-cart.js ~ line 53 ~ cart__button.addEventListener ~ customerName",
-        customerName
+      customerLastName = document.querySelector("#last-name");
+      customerPhone = document.querySelector("#phone");
+      if (!formValidate(customerName.value, customerPhone.value)) {
+        return;
+      }
+      collectingCustomerData(
+        customerName.value,
+        customerLastName.value,
+        customerPhone.value
       );
-      console.log("customerName.value", customerName.value);
+      sendingCartData();
       orderIsReady = false;
     } else {
       orderButton();
@@ -103,6 +151,9 @@ const boxCart = () => {
     data.forEach((item) => {
       createItem = document.createElement("div");
       createItem.classList.add("cart__item");
+      if (!item.endingColor) {
+        item.endingColor = "";
+      }
       createItem.innerHTML = `
                         <div class="cart__info">
                             <h3 class="cart__name">
@@ -273,11 +324,12 @@ const boxCart = () => {
 
   cartClose.addEventListener("click", () => {
     overlayCart.classList.remove("overlay_active");
+    location.reload();
   });
 
   buttonBuy.addEventListener("click", (e) => {
-    e.preventDefault();
     addProductToCart();
+    counter();
   });
 };
 
