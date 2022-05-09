@@ -2257,6 +2257,15 @@ ul {
   margin-bottom: 20px;
   color: #fff;
 }
+.cart_customer_name{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 20px;
+  border-bottom: 1px solid red;
+  margin-bottom: 20px;
+  color: #fff;
+}
 .cart__img {
   height: 50px;
   width: 50px;
