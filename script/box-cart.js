@@ -80,12 +80,12 @@ const boxCart = () => {
   const errorMess = document.querySelector(".constructor__error");
   const addToCartBtn = document.querySelector(".constructor-footer__button");
   const overlayCart = document.querySelector(".overlay");
-  const cartIconCount = document.querySelector(".cart-icon");
   const cart = document.querySelector(".cart");
   const cartBtn = document.querySelector(".header__cart");
   const cartInfo = cart.querySelector(".cart__wr");
   const cartClose = cart.querySelector(".cart__close");
   const cart__button = cart.querySelector(".cart__button");
+  const cartIconCount = document.querySelector(".cart-icon");
 
   cartIconCount.innerHTML = count;
 
@@ -116,7 +116,7 @@ const boxCart = () => {
     cartInfo.innerHTML = "";
     overlayCart.classList.add("overlay_active");
     createItem = document.createElement("div");
-    createItem.classList.add("cart__item");
+    createItem.classList.add("cart_customer_name");
     createItem.innerHTML = customerData;
     cartInfo.append(createItem);
     orderIsReady = true;
@@ -330,6 +330,7 @@ const boxCart = () => {
   buttonBuy.addEventListener("click", (e) => {
     addProductToCart();
     counter();
+    location.reload();
   });
 };
 
