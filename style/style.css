@@ -2546,6 +2546,13 @@ ul {
 .accordion-item__plus span:last-of-type {
   transform: rotate(90deg);
 }
+
+/* cartIcon */
+
+.cart-icon{
+  color: red;
+}
+
 /* contact form */
 .page-wrapper {
   width: 60%;
