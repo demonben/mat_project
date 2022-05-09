@@ -1,39 +1,34 @@
 "use strict";
-const customerData = `<div class="cart__info">
+const customerData = `
+<section>
+<div class="cart__info">
+<div class="page-wrapper">
 <fieldset>
-  <legend>Your contact information</legend>
-  <form class='formWithValidation'>
+  <legend>Контактная информация</legend>
 
-    <label>*Name:</label>
-    <input type='text' class="from" name="name">
+   <p><label for="first-name"> Имя: </label>
+      <input type="text" id="first-name" name="first-name";"> 
 
-    <p><label>Last name: </label>
-      <input type='text' class='from22' />
+   <p><label for="last-name"> Фамилия:  </label>
+  <input type="text" id="last-name" name="last-name"> 
 
-    <p> <label>*Phone number:</label>
-      <input type="text" class="phone" name="phone">
+  <p> <label>Номер телефона:</label>
+            <input type="text" class="phone" name="phone">
 
-    <p><label>*Email:</label>
-      <input type="email" class="email" name="mail">
-
-
-    <p><label>*Special requests:</label>
-      <textarea class='message' name="request"></textarea>
-
-    <p><label>*Do you like little kittens???</label>
-      <select onchange="checkLength()" class='where' name="kittens">
-        <option></option>
-        <option value='yes'>YES!</option>
-        <option value='yes of course!'>YES OF COURSE!</option>
-      </select>
-    </p>
-
-    <p> <button disabled type='submit' class='validateBtn' value='Validate'>Submit</button> </p>
-  </form>
-</fieldset>
-</div>`;
+   <p><label for="email"> Email: </label>
+  <input type="email" id="email" name="email";"placeholder="user-email@gmail.com"> 
+  </fieldset>
+  </div>
+</div>
+</section>
+`;
 
 let createItem;
+let orderIsReady = false;
+
+let customerName;
+let customerLastName;
+let customerPhone;
 
 const boxCart = () => {
   const skinColorItem = document.querySelector(".box-constructor__item_skin");
@@ -52,7 +47,20 @@ const boxCart = () => {
   const cart__button = cart.querySelector(".cart__button");
 
   cart__button.addEventListener("click", () => {
-    orderButton();
+    if (orderIsReady) {
+      console.log(localStorage.getItem("cart"));
+      customerName = document.querySelector("#first-name");
+      console.log(
+        "🚀 ~ file: box-cart.js ~ line 53 ~ cart__button.addEventListener ~ customerName",
+        customerName
+      );
+      console.log("customerName.value", customerName.value);
+      orderIsReady = false;
+    } else {
+      orderButton();
+
+      orderIsReady = true;
+    }
   });
 
   let orderButton = () => {
@@ -62,11 +70,8 @@ const boxCart = () => {
     createItem = document.createElement("div");
     createItem.classList.add("cart__item");
     createItem.innerHTML = customerData;
-
     cartInfo.append(createItem);
-    console.log("🚀 ~ file: box-cart.js ~ line 66 ~ orderButton ~ cartInfo", cartInfo)
-
-    // createItem.innerHTML = `<h1>hello world</h1>`;
+    orderIsReady = true;
   };
 
   const settings = {
@@ -131,7 +136,6 @@ const boxCart = () => {
                         </button>
                    `;
       cartInfo.append(createItem);
-      console.log("🚀 ~ file: box-cart.js ~ line 133 ~ data.forEach ~ cartInfo", cartInfo)
     });
   };
 
@@ -177,13 +181,10 @@ const boxCart = () => {
 
   cart.addEventListener("click", (e) => {
     if (e.target.closest(".cart__close")) {
-      console.log("done");
       overlayCart.classList.remove("overlay_active");
     }
 
     if (e.target.closest(".cart__item")) {
-      console.log("done1");
-
       const cartID = e.target
         .closest(".cart__item")
         .querySelector(".cart__name")
