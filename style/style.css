@@ -2257,6 +2257,15 @@ ul {
   margin-bottom: 20px;
   color: #fff;
 }
+.cart_customer_name{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 20px;
+  border-bottom: 1px solid red;
+  margin-bottom: 20px;
+  color: #fff;
+}
 .cart__img {
   height: 50px;
   width: 50px;
@@ -2545,6 +2554,33 @@ ul {
 }
 .accordion-item__plus span:last-of-type {
   transform: rotate(90deg);
+}
+
+/* cartIcon */
+
+.cart-icon{
+  color: red;
+}
+
+/* contact form */
+.page-wrapper {
+  width: 60%;
+  display: flex;
+  flex-flow: row nowrap;
+}
+section {
+  flex-basis: 70%;
+  margin: auto;
+}
+
+input:not([type="radio"]), textarea {
+  display: block;
+  margin-bottom: 2rem;
+  width: 20rem;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  padding: 0 1rem;
+  border-radius: 10px;
 }
 
 .contacts {

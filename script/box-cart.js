@@ -1,10 +1,75 @@
 "use strict";
-//
-window.addEventListener("storage", (event) => {
-  console.log(event);
-});
-let getCart;
-//
+const customerData = `
+<section>
+<div class="cart__info">
+<div class="page-wrapper">
+<fieldset>
+  <legend>Контактная информация</legend>
+
+   <p><label for="first-name"> Имя*: </label>
+      <input type="text" id="first-name" name="first-name" placeholder="имя" class="_req _name"> 
+
+   <p><label for="last-name"> Фамилия:  </label>
+  <input type="text" id="last-name" name="last-name" placeholder="фамилия"> 
+
+  <p> <label>Номер телефона*:</label>
+            <input type="text" id="phone" name="phone" placeholder="+7962222222" class="_req _phone">
+
+   <p><label for="email"> Email: </label>
+  <input type="email" id="email" name="email" placeholder="user-email@gmail.com"> 
+  </fieldset>
+  </div>
+</div>
+</section>
+`;
+
+let createItem;
+let orderIsReady = false;
+
+const customerCartData = {
+  goods: "",
+  personalData: { name: "", lastName: "", phone: "" },
+};
+let customerName;
+let customerLastName;
+let customerPhone;
+let count = 0;
+
+let counter = () => {
+  let cartGoodsArray = Object.values(JSON.parse(localStorage.getItem("cart")));
+
+  cartGoodsArray.forEach((i) => {
+    count++;
+  });
+};
+counter();
+
+const collectingCustomerData = (name, lastName, phone) => {
+  let storage = JSON.parse(localStorage.getItem("cart"));
+  customerCartData.goods = storage;
+
+  customerCartData.personalData.name = name;
+  customerCartData.personalData.lastName = lastName;
+  customerCartData.personalData.phone = phone;
+
+  console.log(customerCartData);
+};
+
+const sendingCartData = () => {
+  console.log("sended");
+};
+
+const formValidate = (name, phone) => {
+  if (!name) {
+    alert("введите имя");
+    return false;
+  } else if (!phone) {
+    alert("введите номер");
+    return false;
+  }
+  return true;
+};
+
 const boxCart = () => {
   const skinColorItem = document.querySelector(".box-constructor__item_skin");
   const strColorItem = document.querySelector(".box-constructor__item_str");
@@ -19,12 +84,50 @@ const boxCart = () => {
   const cartBtn = document.querySelector(".header__cart");
   const cartInfo = cart.querySelector(".cart__wr");
   const cartClose = cart.querySelector(".cart__close");
+  const cart__button = cart.querySelector(".cart__button");
+  const cartIconCount = document.querySelector(".cart-icon");
+
+  cartIconCount.innerHTML = count;
+
+  cart__button.addEventListener("click", () => {
+    if (orderIsReady) {
+      customerName = document.querySelector("#first-name");
+      customerLastName = document.querySelector("#last-name");
+      customerPhone = document.querySelector("#phone");
+      if (!formValidate(customerName.value, customerPhone.value)) {
+        return;
+      }
+      collectingCustomerData(
+        customerName.value,
+        customerLastName.value,
+        customerPhone.value
+      );
+      sendingCartData();
+      orderIsReady = false;
+    } else {
+      orderButton();
+
+      orderIsReady = true;
+    }
+  });
+
+  let orderButton = () => {
+    overlayCart.classList.remove("overlay_active");
+    cartInfo.innerHTML = "";
+    overlayCart.classList.add("overlay_active");
+    createItem = document.createElement("div");
+    createItem.classList.add("cart_customer_name");
+    createItem.innerHTML = customerData;
+    cartInfo.append(createItem);
+    orderIsReady = true;
+  };
 
   const settings = {
     skinColor: "",
     strColor: "",
     endingColor: "",
     size: "",
+    name: "",
     price: "",
   };
 
@@ -46,15 +149,15 @@ const boxCart = () => {
   const createItemBox = (data) => {
     cartInfo.innerHTML = "";
     data.forEach((item) => {
-      const createItem = document.createElement("div");
+      createItem = document.createElement("div");
+      createItem.classList.add("cart__item");
       if (!item.endingColor) {
         item.endingColor = "";
       }
-      createItem.classList.add("cart__item");
       createItem.innerHTML = `
                         <div class="cart__info">
                             <h3 class="cart__name">
-                                ${item.size}
+                                ${item.name}
                             </h3>
                             <span style="margin: 0;" class="cart__color">
                                 ${item.skinColor}<br>${item.strColor}
@@ -88,9 +191,7 @@ const boxCart = () => {
   };
 
   const addProductToCart = () => {
-    let getBoxes = JSON.parse(localStorage.getItem("box-cart"));
-    let getPillows = JSON.parse(localStorage.getItem("pillows-cart"));
-    storageCollector(getBoxes, getPillows);
+    let getCart = JSON.parse(localStorage.getItem("cart"));
 
     if (getCart) {
       const idProduct = settings.size;
@@ -107,6 +208,7 @@ const boxCart = () => {
           strColor: settings.strColor,
           endingColor: settings.endingColor,
           size: settings.size,
+          name: settings.size,
           price: settings.price,
         };
       }
@@ -118,12 +220,13 @@ const boxCart = () => {
           strColor: settings.strColor,
           endingColor: settings.endingColor,
           size: settings.size,
+          name: settings.size,
           price: settings.price,
         },
       };
     }
 
-    localStorage.setItem("box-cart", JSON.stringify(getCart));
+    localStorage.setItem("cart", JSON.stringify(getCart));
     createItemBox(Object.values(getCart));
   };
 
@@ -138,7 +241,7 @@ const boxCart = () => {
         .querySelector(".cart__name")
         .textContent.trim();
       if (e.target.closest(".cart-counter__btn_plus")) {
-        const getCart = JSON.parse(localStorage.getItem("box-cart"));
+        const getCart = JSON.parse(localStorage.getItem("cart"));
 
         const clickedGoods = Object.keys(getCart).find(
           (good) => good === cartID
@@ -147,11 +250,11 @@ const boxCart = () => {
         if (clickedGoods) {
           getCart[cartID]["count"] += 1;
         }
-        localStorage.setItem("box-cart", JSON.stringify(getCart));
+        localStorage.setItem("cart", JSON.stringify(getCart));
         createItemBox(Object.values(getCart));
       }
       if (e.target.closest(".cart-counter__btn_minus")) {
-        const getCart = JSON.parse(localStorage.getItem("box-cart"));
+        const getCart = JSON.parse(localStorage.getItem("cart"));
 
         const clickedGoods = Object.keys(getCart).find(
           (good) => good === cartID
@@ -162,11 +265,11 @@ const boxCart = () => {
         } else {
           delete getCart[cartID];
         }
-        localStorage.setItem("box-cart", JSON.stringify(getCart));
+        localStorage.setItem("cart", JSON.stringify(getCart));
         createItemBox(Object.values(getCart));
       }
       if (e.target.closest(".cart__del")) {
-        const getCart = JSON.parse(localStorage.getItem("box-cart"));
+        const getCart = JSON.parse(localStorage.getItem("cart"));
 
         const clickedGoods = Object.keys(getCart).find(
           (good) => good === cartID
@@ -175,7 +278,7 @@ const boxCart = () => {
         if (clickedGoods) {
           delete getCart[cartID];
         }
-        localStorage.setItem("box-cart", JSON.stringify(getCart));
+        localStorage.setItem("cart", JSON.stringify(getCart));
         createItemBox(Object.values(getCart));
       }
     }
@@ -210,10 +313,10 @@ const boxCart = () => {
       settings.price = e.target.value;
     });
   });
-// todo
+
   cartBtn.addEventListener("click", () => {
-    if (localStorage.getItem("cart")) {
-      const keys = Object.values(JSON.parse(localStorage.getItem("box-cart")));
+    if (JSON.parse(localStorage.getItem("cart"))) {
+      const keys = Object.values(JSON.parse(localStorage.getItem("cart")));
       createItemBox(keys);
     }
     overlayCart.classList.add("overlay_active");
@@ -221,20 +324,14 @@ const boxCart = () => {
 
   cartClose.addEventListener("click", () => {
     overlayCart.classList.remove("overlay_active");
+    location.reload();
   });
 
   buttonBuy.addEventListener("click", (e) => {
-    e.preventDefault();
     addProductToCart();
+    counter();
+    location.reload();
   });
 };
-let storageCollector = (getBoxes, getPillows) => {
-  if (getBoxes && getPillows) {
-    getCart = Object.assign(getBoxes, getPillows);
-  } else if (getBoxes) {
-    getCart = Object.assign(getBoxes);
-  } else if (getPillows) {
-    getCart = Object.assign(getPillows);
-  }
-};
+
 boxCart();
