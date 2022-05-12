@@ -19,7 +19,7 @@ const addToCartProduct = () => {
                                 ${item.name}
                             </h3>
                             <span class="cart__color">
-                                Цвет: ${item.color}<br>Строчка: ${item.colorStr}
+                                Цвет: ${item.skinColor}<br>Строчка: ${item.strColor}
                             </span>
                             <span class="cart__id">
                                 id: <span class="cart__id_num">${item.id}</span>
@@ -66,10 +66,10 @@ const addToCartProduct = () => {
         getCart[appData.imageNumber] = {
           count: 1,
           id: appData.imageNumber,
-          name: appData.numberRugs,
+          name: appData.name,
           price: appData.fullPrice,
-          color: appData.skinColorName,
-          colorStr: appData.colorStrName,
+          skinColor: appData.skinColor,
+          strColor: appData.strColor,
         };
       }
     } else {
@@ -77,10 +77,10 @@ const addToCartProduct = () => {
         [appData.imageNumber]: {
           count: 1,
           id: appData.imageNumber,
-          name: appData.numberRugs,
+          name: appData.name,
           price: appData.fullPrice,
-          color: appData.skinColorName,
-          colorStr: appData.colorStrName,
+          skinColor: appData.skinColorName,
+          strColor: appData.colorStrName,
         },
       };
     }
