@@ -36,11 +36,15 @@ let customerPhone;
 let count = 0;
 
 let counter = () => {
-  let cartGoodsArray = Object.values(JSON.parse(localStorage.getItem("cart")));
+  if (JSON.parse(localStorage.getItem("cart"))) {
+    let cartGoodsArray = Object.values(
+      JSON.parse(localStorage.getItem("cart"))
+    );
 
-  cartGoodsArray.forEach((i) => {
-    count++;
-  });
+    cartGoodsArray.forEach((i) => {
+      count++;
+    });
+  }
 };
 counter();
 
@@ -51,8 +55,6 @@ const collectingCustomerData = (name, lastName, phone) => {
   customerCartData.personalData.name = name;
   customerCartData.personalData.lastName = lastName;
   customerCartData.personalData.phone = phone;
-
-  console.log(customerCartData);
 };
 
 const sendingCartData = () => {
@@ -83,7 +85,6 @@ const pillowsCart = () => {
   const capesChoice = document.querySelector(".capes-choice");
   const cart__button = cart.querySelector(".cart__button");
   const cartIconCount = document.querySelector(".cart-icon");
-
 
   cartIconCount.innerHTML = count;
 
@@ -125,12 +126,10 @@ const pillowsCart = () => {
     strColor: "",
     name: "",
     price: "",
+    id: "0",
   };
 
   const validate = () => {
-    console.log(settings.skinColor);
-    console.log(settings.strColor);
-    console.log(settings.name);
     if (settings.skinColor && settings.strColor && settings.name) {
       errorMess.classList.remove("constructor__error_active");
       buttonBuy.classList.add("capes__button_active");
@@ -194,6 +193,7 @@ const pillowsCart = () => {
           strColor: settings.strColor,
           name: settings.name,
           price: settings.price,
+          id: settings.id,
         };
       }
     } else {
@@ -204,6 +204,7 @@ const pillowsCart = () => {
           strColor: settings.strColor,
           name: settings.name,
           price: settings.price,
+          id: settings.id,
         },
       };
     }
@@ -218,8 +219,6 @@ const pillowsCart = () => {
     }
 
     if (e.target.closest(".cart__item")) {
-      console.log("🚀 ~ file: pillows-cart.js ~ line 225 ~ cart.addEventListener ~ cartID", e.target)
-
       const cartID = e.target
         .closest(".cart__item")
         .querySelector(".cart__name")
@@ -301,12 +300,11 @@ const pillowsCart = () => {
   cartClose.addEventListener("click", () => {
     overlayCart.classList.remove("overlay_active");
     location.reload();
-
   });
 
   buttonBuy.addEventListener("click", (e) => {
     addProductToCart();
-    counter()
+    counter();
   });
 };
 
