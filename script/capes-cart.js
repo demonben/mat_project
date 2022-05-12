@@ -1,4 +1,4 @@
-'use strict'
+"use strict";
 const customerData = `
 <section>
 <div class="cart__info">
@@ -36,118 +36,129 @@ let customerPhone;
 let count = 0;
 
 let counter = () => {
-  let cartGoodsArray = Object.values(JSON.parse(localStorage.getItem("cart")));
+  if (JSON.parse(localStorage.getItem("cart"))) {
+    let cartGoodsArray = Object.values(
+      JSON.parse(localStorage.getItem("cart"))
+    );
 
-  cartGoodsArray.forEach((i) => {
-    count++;
-  });
+    cartGoodsArray.forEach((i) => {
+      count++;
+    });
+  }
 };
 counter();
 
-
 const collectingCustomerData = (name, lastName, phone) => {
-    let storage = JSON.parse(localStorage.getItem("cart"));
-    customerCartData.goods = storage;
-  
-    customerCartData.personalData.name = name;
-    customerCartData.personalData.lastName = lastName;
-    customerCartData.personalData.phone = phone;
-  
-    console.log(customerCartData);
-  };
-  
-  const sendingCartData = () => {
-    console.log("sended");
-  };
-  
-  const formValidate = (name, phone) => {
-    if (!name) {
-      alert("введите имя");
-      return false;
-    } else if (!phone) {
-      alert("введите номер");
-      return false;
-    }
-    return true;
-  };
+  let storage = JSON.parse(localStorage.getItem("cart"));
+  customerCartData.goods = storage;
+
+  customerCartData.personalData.name = name;
+  customerCartData.personalData.lastName = lastName;
+  customerCartData.personalData.phone = phone;
+
+  console.log(customerCartData);
+};
+
+const sendingCartData = () => {
+  console.log("sended");
+};
+
+const formValidate = (name, phone) => {
+  if (!name) {
+    alert("введите имя");
+    return false;
+  } else if (!phone) {
+    alert("введите номер");
+    return false;
+  }
+  return true;
+};
 
 const capesCart = () => {
-    const alcColorItem = document.querySelector('.capes-constructor__item_alc')
-    const strColorItem = document.querySelector('.box-constructor__item_str')
-    const endingColorItem = document.querySelector('.box-constructor__item_edging')
-    const buttonBuy = document.querySelector('.capes__button')
-    const errorMess = document.querySelector('.constructor__error')
-    const overlayCart = document.querySelector('.overlay')
-    const cart = document.querySelector('.cart')
-    const cartBtn = document.querySelector('.header__cart')
-    const cartInfo = cart.querySelector('.cart__wr')
-    const cartClose = cart.querySelector('.cart__close')
-    const capesChoice = document.querySelector('.capes-choice')
-    const cart__button = cart.querySelector(".cart__button");
-    const cartIconCount = document.querySelector(".cart-icon");
+  const alcColorItem = document.querySelector(".capes-constructor__item_alc");
+  const strColorItem = document.querySelector(".box-constructor__item_str");
+  const endingColorItem = document.querySelector(
+    ".box-constructor__item_edging"
+  );
+  const buttonBuy = document.querySelector(".capes__button");
+  const errorMess = document.querySelector(".constructor__error");
+  const overlayCart = document.querySelector(".overlay");
+  const cart = document.querySelector(".cart");
+  const cartBtn = document.querySelector(".header__cart");
+  const cartInfo = cart.querySelector(".cart__wr");
+  const cartClose = cart.querySelector(".cart__close");
+  const capesChoice = document.querySelector(".capes-choice");
+  const cart__button = cart.querySelector(".cart__button");
+  const cartIconCount = document.querySelector(".cart-icon");
 
-    cartIconCount.innerHTML = count;
+  cartIconCount.innerHTML = count;
 
-    cart__button.addEventListener("click", () => {
-        if (orderIsReady) {
-          customerName = document.querySelector("#first-name");
-          customerLastName = document.querySelector("#last-name");
-          customerPhone = document.querySelector("#phone");
-          if (!formValidate(customerName.value, customerPhone.value)) {
-            return;
-          }
-          collectingCustomerData(
-            customerName.value,
-            customerLastName.value,
-            customerPhone.value
-          );
-          sendingCartData();
-          orderIsReady = false;
-        } else {
-          orderButton();
-    
-          orderIsReady = true;
-        }
-      });
-    
-      let orderButton = () => {
-        overlayCart.classList.remove("overlay_active");
-        cartInfo.innerHTML = "";
-        overlayCart.classList.add("overlay_active");
-        createItem = document.createElement("div");
-        createItem.classList.add("cart_customer_name");
-        createItem.innerHTML = customerData;
-        cartInfo.append(createItem);
-        orderIsReady = true;
-      };
+  cart__button.addEventListener("click", () => {
+    if (orderIsReady) {
+      customerName = document.querySelector("#first-name");
+      customerLastName = document.querySelector("#last-name");
+      customerPhone = document.querySelector("#phone");
+      if (!formValidate(customerName.value, customerPhone.value)) {
+        return;
+      }
+      collectingCustomerData(
+        customerName.value,
+        customerLastName.value,
+        customerPhone.value
+      );
+      sendingCartData();
+      orderIsReady = false;
+    } else {
+      orderButton();
 
-    const settings = {
-        skinColor: '',
-        strColor: '',
-        endingColor: '',
-        name: '',
-        price: ''
+      orderIsReady = true;
     }
+  });
 
-    const validate = () => {
-        if (settings.skinColor && settings.strColor && settings.endingColor && settings.name) {
-            errorMess.classList.remove('constructor__error_active')
-            buttonBuy.classList.add('capes__button_active')
-        } else {
-            buttonBuy.classList.remove('capes__button_active')
-            errorMess.classList.add('constructor__error_active')
-        }
+  let orderButton = () => {
+    overlayCart.classList.remove("overlay_active");
+    cartInfo.innerHTML = "";
+    overlayCart.classList.add("overlay_active");
+    createItem = document.createElement("div");
+    createItem.classList.add("cart_customer_name");
+    createItem.innerHTML = customerData;
+    cartInfo.append(createItem);
+    orderIsReady = true;
+  };
+
+  const settings = {
+    skinColor: "",
+    strColor: "",
+    endingColor: "",
+    name: "",
+    price: "",
+    id: "0",
+  };
+
+  const validate = () => {
+    if (
+      settings.skinColor &&
+      settings.strColor &&
+      settings.endingColor &&
+      settings.name
+    ) {
+      errorMess.classList.remove("constructor__error_active");
+      buttonBuy.classList.add("capes__button_active");
+    } else {
+      buttonBuy.classList.remove("capes__button_active");
+      errorMess.classList.add("constructor__error_active");
     }
+  };
 
-    const createItemBox = (data) => {
-        cartInfo.innerHTML = ''
-        data.forEach(item => {
-            const createItem = document.createElement('div')
-            createItem.classList.add('cart__item')
-            if(!item.endingColor){
-                item.endingColor=""
-            }
-            createItem.innerHTML = `
+  const createItemBox = (data) => {
+    cartInfo.innerHTML = "";
+    data.forEach((item) => {
+      const createItem = document.createElement("div");
+      createItem.classList.add("cart__item");
+      if (!item.endingColor) {
+        item.endingColor = "";
+      }
+      createItem.innerHTML = `
                         <div class="cart__info">
                             <h3 class="cart__name">
                                 ${item.name}
@@ -156,7 +167,9 @@ const capesCart = () => {
                                 ${item.skinColor}<br>${item.strColor}
                             </span>
                             <span class="cart__id">
-                                <span class="cart__id_num">${item.endingColor}</span>
+                                <span class="cart__id_num">${
+                                  item.endingColor
+                                }</span>
                             </span>
                         </div>
                         <div class="cart-counter">
@@ -176,139 +189,151 @@ const capesCart = () => {
                         <button class="cart__del">
                             <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" fill="none"> <path d="M18.947 17.1533L45.045 43.0563" stroke="#E42E3A" stroke-width="2" stroke-miterlimit="10"/> <path d="M19.045 43.1527L44.947 17.0557" stroke="#E42E3A" stroke-width="2" stroke-miterlimit="10"/> <path d="M32 62.999C49.1203 62.999 62.999 49.1203 62.999 32C62.999 14.8797 49.1203 1.00098 32 1.00098C14.8797 1.00098 1.00101 14.8797 1.00101 32C1.00101 49.1203 14.8797 62.999 32 62.999Z" stroke="#E42E3A" stroke-width="2" stroke-miterlimit="10"/> </svg>
                         </button>
-                   `
-            cartInfo.append(createItem)
-        })
+                   `;
+      cartInfo.append(createItem);
+    });
+  };
+
+  const addProductToCart = () => {
+    let getCart = JSON.parse(localStorage.getItem("cart"));
+
+    if (getCart) {
+      const idProduct = settings.name;
+      const clickedGoods = Object.keys(getCart).find(
+        (good) => good === idProduct
+      );
+
+      if (clickedGoods) {
+        getCart[idProduct]["count"] += 1;
+      } else {
+        getCart[idProduct] = {
+          count: 1,
+          skinColor: settings.skinColor,
+          strColor: settings.strColor,
+          endingColor: settings.endingColor,
+          name: settings.name,
+          price: settings.price,
+          id: settings.id,
+        };
+      }
+    } else {
+      getCart = {
+        [settings.name]: {
+          count: 1,
+          skinColor: settings.skinColor,
+          strColor: settings.strColor,
+          endingColor: settings.endingColor,
+          name: settings.name,
+          price: settings.price,
+          id: settings.id,
+        },
+      };
     }
 
-    const addProductToCart = () => {
-        let getCart = JSON.parse(localStorage.getItem('cart'))
+    localStorage.setItem("cart", JSON.stringify(getCart));
+    createItemBox(Object.values(getCart));
+  };
 
-        if (getCart) {
-            const idProduct = settings.name
-            const clickedGoods = Object.keys(getCart).find(good => good === idProduct)
+  cart.addEventListener("click", (e) => {
+    if (e.target.closest(".cart__close")) {
+      overlayCart.classList.remove("overlay_active");
+    }
 
-            if (clickedGoods) {
-                getCart[idProduct]['count'] += 1
-            } else {
-                getCart[idProduct] = {
-                    count: 1,
-                    skinColor: settings.skinColor,
-                    strColor: settings.strColor,
-                    endingColor: settings.endingColor,
-                    name: settings.name,
-                    price: settings.price
-                }
-            }
+    if (e.target.closest(".cart__item")) {
+      const cartID = e.target
+        .closest(".cart__item")
+        .querySelector(".cart__name")
+        .textContent.trim();
+      if (e.target.closest(".cart-counter__btn_plus")) {
+        const getCart = JSON.parse(localStorage.getItem("cart"));
+
+        const clickedGoods = Object.keys(getCart).find(
+          (good) => good === cartID
+        );
+
+        if (clickedGoods) {
+          getCart[cartID]["count"] += 1;
+        }
+        localStorage.setItem("cart", JSON.stringify(getCart));
+        createItemBox(Object.values(getCart));
+      }
+      if (e.target.closest(".cart-counter__btn_minus")) {
+        const getCart = JSON.parse(localStorage.getItem("cart"));
+
+        const clickedGoods = Object.keys(getCart).find(
+          (good) => good === cartID
+        );
+
+        if (clickedGoods && getCart[cartID]["count"] > 1) {
+          getCart[cartID]["count"] -= 1;
         } else {
-            getCart = {
-                [settings.name] : {
-                    count: 1,
-                    skinColor: settings.skinColor,
-                    strColor: settings.strColor,
-                    endingColor: settings.endingColor,
-                    name: settings.name,
-                    price: settings.price,
-                }
-            }
+          delete getCart[cartID];
         }
+        localStorage.setItem("cart", JSON.stringify(getCart));
+        createItemBox(Object.values(getCart));
+      }
+      if (e.target.closest(".cart__del")) {
+        const getCart = JSON.parse(localStorage.getItem("cart"));
 
-        localStorage.setItem('cart', JSON.stringify(getCart))
-        createItemBox(Object.values(getCart))
+        const clickedGoods = Object.keys(getCart).find(
+          (good) => good === cartID
+        );
+
+        if (clickedGoods) {
+          delete getCart[cartID];
+        }
+        localStorage.setItem("cart", JSON.stringify(getCart));
+        createItemBox(Object.values(getCart));
+      }
     }
+  });
 
-    cart.addEventListener('click', (e) => {
+  alcColorItem.onclick = (e) => {
+    if (e.target.checked) {
+      settings.skinColor = e.target.value;
+      validate();
+    }
+  };
 
-        if (e.target.closest('.cart__close')) {
-            overlayCart.classList.remove('overlay_active')
-        }
+  strColorItem.onclick = (e) => {
+    if (e.target.checked) {
+      settings.strColor = e.target.value;
+      validate();
+    }
+  };
 
-        if (e.target.closest('.cart__item')) {
-            const cartID = e.target.closest('.cart__item').querySelector('.cart__name').textContent.trim()
-            if (e.target.closest('.cart-counter__btn_plus')) {
-                const getCart = JSON.parse(localStorage.getItem('cart'))
+  endingColorItem.onclick = (e) => {
+    if (e.target.checked) {
+      settings.endingColor = e.target.value;
+      validate();
+    }
+  };
 
-                const clickedGoods = Object.keys(getCart).find(good => good === cartID)
+  capesChoice.addEventListener("click", (e) => {
+    if (e.target.checked) {
+      settings.name = e.target.getAttribute("aria-label");
+      settings.price = e.target.value;
+      validate();
+    }
+  });
 
-                if (clickedGoods) {
-                    getCart[cartID]['count'] += 1
-                }
-                localStorage.setItem('cart', JSON.stringify(getCart))
-                createItemBox(Object.values(getCart))
-            }
-            if (e.target.closest('.cart-counter__btn_minus')) {
-                const getCart = JSON.parse(localStorage.getItem('cart'))
+  cartBtn.addEventListener("click", () => {
+    if (JSON.parse(localStorage.getItem("cart"))) {
+      const keys = Object.values(JSON.parse(localStorage.getItem("cart")));
+      createItemBox(keys);
+    }
+    overlayCart.classList.add("overlay_active");
+  });
 
-                const clickedGoods = Object.keys(getCart).find(good => good === cartID)
+  cartClose.addEventListener("click", () => {
+    overlayCart.classList.remove("overlay_active");
+    location.reload();
+  });
 
-                if (clickedGoods && getCart[cartID]['count'] > 1) {
-                    getCart[cartID]['count'] -= 1
-                } else {
-                    delete getCart[cartID]
-                }
-                localStorage.setItem('cart', JSON.stringify(getCart))
-                createItemBox(Object.values(getCart))
-            }
-            if (e.target.closest('.cart__del')) {
-                const getCart = JSON.parse(localStorage.getItem('cart'))
+  buttonBuy.addEventListener("click", (e) => {
+    addProductToCart();
+    counter();
+  });
+};
 
-                const clickedGoods = Object.keys(getCart).find(good => good === cartID)
-
-                if (clickedGoods) {
-                    delete getCart[cartID]
-                }
-                localStorage.setItem('cart', JSON.stringify(getCart))
-                createItemBox(Object.values(getCart))
-            }
-        }
-    })
-
-    alcColorItem.onclick = ((e) => {
-        if (e.target.checked) {
-            settings.skinColor = e.target.value
-            validate()
-        }
-    })
-
-    strColorItem.onclick = ((e) => {
-        if (e.target.checked) {
-            settings.strColor = e.target.value
-            validate()
-        }
-    })
-
-    endingColorItem.onclick = ((e) => {
-        if (e.target.checked) {
-            settings.endingColor = e.target.value
-            validate()
-        }
-    })
-
-    capesChoice.addEventListener('click', (e) => {
-        if (e.target.checked) {
-            settings.name = e.target.getAttribute('aria-label')
-            settings.price = e.target.value
-            validate()
-        }
-    })
-
-    cartBtn.addEventListener('click', () => {
-        if (JSON.parse(localStorage.getItem('cart'))) {
-            const keys = Object.values(JSON.parse(localStorage.getItem('cart')))
-            createItemBox(keys)
-        }
-        overlayCart.classList.add('overlay_active')
-    })
-
-    cartClose.addEventListener('click', () => {
-        overlayCart.classList.remove('overlay_active')
-        location.reload();
-    })
-
-    buttonBuy.addEventListener('click', (e) => {
-        addProductToCart()
-        counter();
-    })
-}
-
-capesCart()
+capesCart();
