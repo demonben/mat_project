@@ -19,14 +19,15 @@ const addCart = document.querySelector(".constructor-footer__button");
 addCart.classList.add("constructor-footer__button_active");
 
 const appData = {
+  name:"mock",
   fullPrice: 0,
   setPrice: 0,
   otherServices: 0,
   accessories: 0,
   typeCarped: "1",
-  skinColor: "",
+  skinColor: "mock black",
   typePatterns: "0",
-  colorStr: "0",
+  strColor: "mock red",
   colorFiller: "0",
   colorEdgingFiller: "0",
   colorEdgingSkin: "0",
