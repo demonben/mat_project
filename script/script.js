@@ -16,6 +16,7 @@ const endingSkinColors = document.getElementById("edging-color");
 const image = document.querySelector(".constructor-filler__img > img");
 const error = document.querySelector(".constructor__error");
 const addCart = document.querySelector(".constructor-footer__button");
+// todo remove after presentation 
 addCart.classList.add("constructor-footer__button_active");
 
 const appData = {

@@ -3,6 +3,122 @@ const overlayCart = document.querySelector(".overlay");
 const cart = document.querySelector(".cart");
 const cartBtn = document.querySelector(".header__cart");
 const cartInfo = cart.querySelector(".cart__wr");
+// cart buttons
+const cart__button = cart.querySelector(".cart__button");
+const cartIconCount = document.querySelector(".cart-icon");
+const cartClose = cart.querySelector(".cart__close");
+
+
+
+const customerData = `
+<section>
+<div class="cart__info">
+<div class="page-wrapper">
+<fieldset>
+  <legend>Контактная информация</legend>
+
+   <p><label for="first-name"> Имя*: </label>
+      <input type="text" id="first-name" name="first-name" placeholder="имя" class="_req _name"> 
+
+   <p><label for="last-name"> Фамилия:  </label>
+  <input type="text" id="last-name" name="last-name" placeholder="фамилия"> 
+
+  <p> <label>Номер телефона*:</label>
+            <input type="text" id="phone" name="phone" placeholder="+7962222222" class="_req _phone">
+
+   <p><label for="email"> Email: </label>
+  <input type="email" id="email" name="email" placeholder="user-email@gmail.com"> 
+  </fieldset>
+  </div>
+</div>
+</section>
+`;
+
+let createItem;
+let orderIsReady = false;
+
+const customerCartData = {
+  goods: "",
+  personalData: { name: "", lastName: "", phone: "" },
+};
+let customerName;
+let customerLastName;
+let customerPhone;
+let count = 0;
+
+
+
+cart__button.addEventListener("click", () => {
+  if (orderIsReady) {
+    customerName = document.querySelector("#first-name");
+    customerLastName = document.querySelector("#last-name");
+    customerPhone = document.querySelector("#phone");
+    if (!formValidate(customerName.value, customerPhone.value)) {
+      return;
+    }
+    collectingCustomerData(
+      customerName.value,
+      customerLastName.value,
+      customerPhone.value
+    );
+    sendingCartData();
+    orderIsReady = false;
+  } else {
+    orderButton();
+
+    orderIsReady = true;
+  }
+});
+
+let orderButton = () => {
+  overlayCart.classList.remove("overlay_active");
+  cartInfo.innerHTML = "";
+  overlayCart.classList.add("overlay_active");
+  createItem = document.createElement("div");
+  createItem.classList.add("cart_customer_name");
+  createItem.innerHTML = customerData;
+  cartInfo.append(createItem);
+  orderIsReady = true;
+};
+
+
+let counter = () => {
+  if (JSON.parse(localStorage.getItem("cart"))) {
+    let cartGoodsArray = Object.values(
+      JSON.parse(localStorage.getItem("cart"))
+    );
+console.log(cartGoodsArray);
+    cartGoodsArray.forEach((i) => {
+      count++;
+    });
+  }
+};
+counter();
+
+const collectingCustomerData = (name, lastName, phone) => {
+  let storage = JSON.parse(localStorage.getItem("cart"));
+  customerCartData.goods = storage;
+
+  customerCartData.personalData.name = name;
+  customerCartData.personalData.lastName = lastName;
+  customerCartData.personalData.phone = phone;
+
+};
+
+const sendingCartData = () => {
+  console.log("sended");
+};
+
+const formValidate = (name, phone) => {
+  if (!name) {
+    alert("введите имя");
+    return false;
+  } else if (!phone) {
+    alert("введите номер");
+    return false;
+  }
+  return true;
+};
 
 const addToCartProduct = () => {
   const createItem = (data) => {
@@ -91,6 +207,7 @@ const addToCartProduct = () => {
 
   cart.addEventListener("click", (e) => {
     if (e.target.closest(".cart__close")) {
+      counter()
       overlayCart.classList.remove("overlay_active");
     }
 
@@ -150,9 +267,16 @@ const addToCartProduct = () => {
     overlayCart.classList.add("overlay_active");
   });
 
+  cartClose.addEventListener("click", () => {
+    overlayCart.classList.remove("overlay_active");
+    location.reload();
+  });
+
   addToCartBtn.addEventListener("click", () => {
     addProductToCart();
+    location.reload();
   });
 };
 
 addToCartProduct();
+cartIconCount.innerHTML = count;
