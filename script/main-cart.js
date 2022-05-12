@@ -87,7 +87,6 @@ let counter = () => {
     let cartGoodsArray = Object.values(
       JSON.parse(localStorage.getItem("cart"))
     );
-console.log(cartGoodsArray);
     cartGoodsArray.forEach((i) => {
       count++;
     });
