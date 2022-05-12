@@ -36,11 +36,15 @@ let customerPhone;
 let count = 0;
 
 let counter = () => {
-  let cartGoodsArray = Object.values(JSON.parse(localStorage.getItem("cart")));
+  if (JSON.parse(localStorage.getItem("cart"))) {
+    let cartGoodsArray = Object.values(
+      JSON.parse(localStorage.getItem("cart"))
+    );
 
-  cartGoodsArray.forEach((i) => {
-    count++;
-  });
+    cartGoodsArray.forEach((i) => {
+      count++;
+    });
+  }
 };
 counter();
 
@@ -129,6 +133,7 @@ const boxCart = () => {
     size: "",
     name: "",
     price: "",
+    id: "231",
   };
 
   const validate = () => {
@@ -210,6 +215,7 @@ const boxCart = () => {
           size: settings.size,
           name: settings.size,
           price: settings.price,
+          id: settings.id,
         };
       }
     } else {
@@ -222,6 +228,7 @@ const boxCart = () => {
           size: settings.size,
           name: settings.size,
           price: settings.price,
+          id: settings.id,
         },
       };
     }
