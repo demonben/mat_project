@@ -46,7 +46,10 @@ let customerLastName;
 let customerPhone;
 let count = 0;
 
+window.addEventListener('storage',()=>{
+  location.reload();
 
+})
 
 cart__button.addEventListener("click", () => {
   if (orderIsReady) {
