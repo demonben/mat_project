@@ -1,4 +1,9 @@
 "use strict";
+
+window.addEventListener("storage", () => {
+  location.reload();
+});
+
 const customerData = `
 <section>
 <div class="cart__info">
