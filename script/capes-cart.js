@@ -134,7 +134,7 @@ const capesCart = () => {
     endingColor: "",
     name: "",
     price: "",
-    id: "0",
+    id: "3245",
   };
 
   const validate = () => {
@@ -171,6 +171,11 @@ const capesCart = () => {
                             <span class="cart__id">
                                 <span class="cart__id_num">${
                                   item.endingColor
+                                }</span>
+                            </span>
+                            <span class="cart__id">
+                                <span class="cart__id_num">${
+                                  item.id
                                 }</span>
                             </span>
                         </div>
