@@ -177,6 +177,11 @@ const boxCart = () => {
                                   item.endingColor
                                 }</span>
                             </span>
+                            <span class="cart__id">
+                            <span class="cart__id_num">${
+                              item.id
+                            }</span>
+                        </span>
                         </div>
                         <div class="cart-counter">
                             <div class="cart-counter__btn cart-counter__btn_minus">
