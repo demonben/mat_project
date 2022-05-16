@@ -130,7 +130,7 @@ const pillowsCart = () => {
     strColor: "",
     name: "",
     price: "",
-    id: "0",
+    id: "643",
   };
 
   const validate = () => {
@@ -155,6 +155,9 @@ const pillowsCart = () => {
                             </h3>
                             <span style="margin: 0;" class="cart__color">
                                 ${item.skinColor}<br>${item.strColor}
+                            </span>
+                            <span class="cart__id">
+                                id: <span class="cart__id_num">${item.id}</span>
                             </span>
                         </div>
                         <div class="cart-counter">
