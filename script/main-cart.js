@@ -129,9 +129,6 @@ const addToCartProduct = () => {
       const createItem = document.createElement("div");
       createItem.classList.add("cart__item");
       createItem.innerHTML = `
-                        <div class="cart__img">
-                            <img src="./img/rugs/${item.id}.jpg" alt="image">
-                        </div>
                         <div class="cart__info">
                             <h3 class="cart__name">
                                 ${item.name}
