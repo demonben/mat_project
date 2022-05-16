@@ -59,7 +59,6 @@ const collectingCustomerData = (name, lastName, phone) => {
   customerCartData.personalData.lastName = lastName;
   customerCartData.personalData.phone = phone;
 
-  console.log(customerCartData);
 };
 
 const sendingCartData = () => {
@@ -251,7 +250,7 @@ const capesCart = () => {
         const getCart = JSON.parse(localStorage.getItem("cart"));
 
         const clickedGoods = Object.keys(getCart).find(
-          (good) => good === cartID
+          (good) => (good === cartID)
         );
 
         if (clickedGoods) {

@@ -181,7 +181,7 @@ const addToCartProduct = () => {
       if (clickedGoods && variantGoods) {
         getCart[idProduct]["count"] += 1;
       } else {
-        getCart[appData.imageNumber] = {
+        getCart[appData.name] = {
           count: 1,
           id: appData.imageNumber,
           name: appData.name,
@@ -192,7 +192,7 @@ const addToCartProduct = () => {
       }
     } else {
       getCart = {
-        [appData.imageNumber]: {
+        [appData.name]: {
           count: 1,
           id: appData.imageNumber,
           name: appData.name,
@@ -216,7 +216,7 @@ const addToCartProduct = () => {
     if (e.target.closest(".cart__item")) {
       const cartID = e.target
         .closest(".cart__item")
-        .querySelector(".cart__id_num").textContent;
+        .querySelector(".cart__name").textContent.trim();
       if (e.target.closest(".cart-counter__btn_plus")) {
         const getCart = JSON.parse(localStorage.getItem("cart"));
 
