@@ -64,8 +64,20 @@ const collectingCustomerData = (name, lastName, phone) => {
   console.log(customerCartData);
 };
 
-const sendingCartData = () => {
+const  sendingCartData = async () => {
   console.log("sended");
+  const response = await fetch('https://the-mat.ru/mail', {
+    mode: 'no-cors',
+    method: 'POST',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': "text/plain"
+    },
+    body: JSON.stringify({a: 1, b: 'Textual content'})
+  });
+  const content = await response.json();
+
+  console.log(content);
 };
 
 const formValidate = (name, phone) => {
