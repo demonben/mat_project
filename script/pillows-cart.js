@@ -1,4 +1,7 @@
 "use strict";
+const cartIconCount = document.querySelector(".cart-icon");
+
+
 window.addEventListener('storage',()=>{
   location.reload();
 
@@ -44,11 +47,12 @@ let counter = () => {
     let cartGoodsArray = Object.values(
       JSON.parse(localStorage.getItem("cart"))
     );
-
+    count = 0;
     cartGoodsArray.forEach((i) => {
       count++;
     });
   }
+  cartIconCount.innerHTML = count;
 };
 counter();
 
@@ -61,8 +65,20 @@ const collectingCustomerData = (name, lastName, phone) => {
   customerCartData.personalData.phone = phone;
 };
 
-const sendingCartData = () => {
-  console.log("sended");
+const sendingCartData = async () => {
+  let cart = localStorage.getItem("cart")
+  console.log(reqBody);
+  const response = await fetch(`https://the-mat.ru/mail/?data=${cart}&customer_data=${customerCartData}`, {
+    mode: "no-cors",
+    method: "POST",
+    headers: {
+      "Content-Type": "text/plain",
+    },
+    body: "hello body",
+  });
+  const content = await response.json();
+
+  console.log(content);
 };
 
 const formValidate = (name, phone) => {
@@ -88,7 +104,6 @@ const pillowsCart = () => {
   const cartClose = cart.querySelector(".cart__close");
   const capesChoice = document.querySelector(".capes-choice");
   const cart__button = cart.querySelector(".cart__button");
-  const cartIconCount = document.querySelector(".cart-icon");
 
   cartIconCount.innerHTML = count;
 
@@ -310,6 +325,7 @@ const pillowsCart = () => {
   });
 
   buttonBuy.addEventListener("click", (e) => {
+    e.preventDefault()
     addProductToCart();
     counter();
   });
