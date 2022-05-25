@@ -1,4 +1,5 @@
 "use strict";
+const cartIconCount = document.querySelector(".cart-icon");
 
 window.addEventListener("storage", () => {
   location.reload();
@@ -45,11 +46,12 @@ let counter = () => {
     let cartGoodsArray = Object.values(
       JSON.parse(localStorage.getItem("cart"))
     );
-
+    count = 0;
     cartGoodsArray.forEach((i) => {
       count++;
     });
   }
+  cartIconCount.innerHTML = count;
 };
 counter();
 
@@ -64,16 +66,18 @@ const collectingCustomerData = (name, lastName, phone) => {
   console.log(customerCartData);
 };
 
-const  sendingCartData = async () => {
-  console.log("sended");
-  const response = await fetch('https://the-mat.ru/mail', {
-    mode: 'no-cors',
-    method: 'POST',
+const sendingCartData = async () => {
+  let cart = localStorage.getItem("cart")
+  let reqBody = JSON.stringify({ a: 1, b: "Textual content" });
+  console.log(reqBody);
+  const response = await fetch(`https://the-mat.ru/mail/?data=${cart}&customer_data=${customerCartData}`, {
+    mode: "no-cors",
+    method: "POST",
     headers: {
-      'Accept': 'application/json',
-      'Content-Type': "text/plain"
+      // "Accept": "application/json",
+      "Content-Type": "text/plain",
     },
-    body: JSON.stringify({a: 1, b: 'Textual content'})
+    body: "hello body",
   });
   const content = await response.json();
 
@@ -106,7 +110,6 @@ const boxCart = () => {
   const cartInfo = cart.querySelector(".cart__wr");
   const cartClose = cart.querySelector(".cart__close");
   const cart__button = cart.querySelector(".cart__button");
-  const cartIconCount = document.querySelector(".cart-icon");
 
   cartIconCount.innerHTML = count;
 
@@ -190,9 +193,7 @@ const boxCart = () => {
                                 }</span>
                             </span>
                             <span class="cart__id">
-                            <span class="cart__id_num">${
-                              item.id
-                            }</span>
+                            <span class="cart__id_num">${item.id}</span>
                         </span>
                         </div>
                         <div class="cart-counter">
@@ -357,9 +358,9 @@ const boxCart = () => {
   });
 
   buttonBuy.addEventListener("click", (e) => {
+    e.preventDefault();
     addProductToCart();
     counter();
-    location.reload();
   });
 };
 
