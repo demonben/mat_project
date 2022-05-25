@@ -2,6 +2,10 @@
 window.addEventListener("storage", () => {
   location.reload();
 });
+
+const cartIconCount = document.querySelector(".cart-icon");
+
+
 const customerData = `
 <section>
 <div class="cart__info">
@@ -43,11 +47,12 @@ let counter = () => {
     let cartGoodsArray = Object.values(
       JSON.parse(localStorage.getItem("cart"))
     );
-
+    count = 0;
     cartGoodsArray.forEach((i) => {
       count++;
     });
   }
+  cartIconCount.innerHTML = count;
 };
 counter();
 
@@ -61,8 +66,22 @@ const collectingCustomerData = (name, lastName, phone) => {
 
 };
 
-const sendingCartData = () => {
-  console.log("sended");
+const sendingCartData = async () => {
+  let cart = localStorage.getItem("cart")
+  let reqBody = JSON.stringify({ a: 1, b: "Textual content" });
+  console.log(reqBody);
+  const response = await fetch(`https://the-mat.ru/mail/?data=${cart}&customer_data=${customerCartData}`, {
+    mode: "no-cors",
+    method: "POST",
+    headers: {
+      // "Accept": "application/json",
+      "Content-Type": "text/plain",
+    },
+    body: "hello body",
+  });
+  const content = await response.json();
+
+  console.log(content);
 };
 
 const formValidate = (name, phone) => {
@@ -91,7 +110,6 @@ const capesCart = () => {
   const cartClose = cart.querySelector(".cart__close");
   const capesChoice = document.querySelector(".capes-choice");
   const cart__button = cart.querySelector(".cart__button");
-  const cartIconCount = document.querySelector(".cart-icon");
 
   cartIconCount.innerHTML = count;
 
@@ -338,6 +356,7 @@ const capesCart = () => {
   });
 
   buttonBuy.addEventListener("click", (e) => {
+    e.preventDefault()
     addProductToCart();
     counter();
   });
