@@ -8,8 +8,6 @@ const cart__button = cart.querySelector(".cart__button");
 const cartIconCount = document.querySelector(".cart-icon");
 const cartClose = cart.querySelector(".cart__close");
 
-
-
 const customerData = `
 <section>
 <div class="cart__info">
@@ -46,10 +44,9 @@ let customerLastName;
 let customerPhone;
 let count = 0;
 
-window.addEventListener('storage',()=>{
+window.addEventListener("storage", () => {
   location.reload();
-
-})
+});
 
 cart__button.addEventListener("click", () => {
   if (orderIsReady) {
@@ -84,16 +81,17 @@ let orderButton = () => {
   orderIsReady = true;
 };
 
-
 let counter = () => {
   if (JSON.parse(localStorage.getItem("cart"))) {
     let cartGoodsArray = Object.values(
       JSON.parse(localStorage.getItem("cart"))
     );
+    count = 0;
     cartGoodsArray.forEach((i) => {
       count++;
     });
   }
+  cartIconCount.innerHTML = count;
 };
 counter();
 
@@ -104,11 +102,27 @@ const collectingCustomerData = (name, lastName, phone) => {
   customerCartData.personalData.name = name;
   customerCartData.personalData.lastName = lastName;
   customerCartData.personalData.phone = phone;
-
 };
 
-const sendingCartData = () => {
-  console.log("sended");
+const sendingCartData = async () => {
+  let cart = localStorage.getItem("cart");
+  let reqBody = JSON.stringify({ a: 1, b: "Textual content" });
+  console.log(reqBody);
+  const response = await fetch(
+    `https://the-mat.ru/mail/?data=${cart}&customer_data=${customerCartData}`,
+    {
+      mode: "no-cors",
+      method: "POST",
+      headers: {
+        // "Accept": "application/json",
+        "Content-Type": "text/plain",
+      },
+      body: "hello body",
+    }
+  );
+  const content = await response.json();
+
+  console.log(content);
 };
 
 const formValidate = (name, phone) => {
@@ -134,7 +148,9 @@ const addToCartProduct = () => {
                                 ${item.name}
                             </h3>
                             <span class="cart__color">
-                                Цвет: ${item.skinColor}<br>Строчка: ${item.strColor}
+                                Цвет: ${item.skinColor}<br>Строчка: ${
+        item.strColor
+      }
                             </span>
                             <span class="cart__id">
                                 id: <span class="cart__id_num">${item.id}</span>
@@ -167,10 +183,13 @@ const addToCartProduct = () => {
 
     if (getCart) {
       const idProduct = appData.imageNumber;
+
       const variantRugs = appData.numberRugs;
+
       const clickedGoods = Object.keys(getCart).find(
         (good) => good === idProduct
       );
+
       const variantGoods = Object.keys(getCart).find(
         (good) => good === variantRugs
       );
@@ -178,42 +197,58 @@ const addToCartProduct = () => {
       if (clickedGoods && variantGoods) {
         getCart[idProduct]["count"] += 1;
       } else {
-        getCart[appData.name] = {
+        getCart[appData.imageNumber] = {
           count: 1,
+
           id: appData.imageNumber,
-          name: appData.name,
+
+          name: appData.numberRugs,
+
           price: appData.fullPrice,
-          skinColor: appData.skinColor,
-          strColor: appData.strColor,
+
+          color: appData.skinColorName,
+
+          colorStr: appData.colorStrName,
+
+          addOptions: appData.otherServiceName,
         };
       }
     } else {
       getCart = {
-        [appData.name]: {
+        [appData.imageNumber]: {
           count: 1,
+
           id: appData.imageNumber,
-          name: appData.name,
+
+          name: appData.numberRugs,
+
           price: appData.fullPrice,
-          skinColor: appData.skinColorName,
-          strColor: appData.colorStrName,
+
+          color: appData.skinColorName,
+
+          colorStr: appData.colorStr,
+
+          addOptions: appData.otherServiceName,
         },
       };
     }
 
     localStorage.setItem("cart", JSON.stringify(getCart));
+
     createItem(Object.values(getCart));
   };
 
   cart.addEventListener("click", (e) => {
     if (e.target.closest(".cart__close")) {
-      counter()
+      counter();
       overlayCart.classList.remove("overlay_active");
     }
 
     if (e.target.closest(".cart__item")) {
       const cartID = e.target
         .closest(".cart__item")
-        .querySelector(".cart__name").textContent.trim();
+        .querySelector(".cart__name")
+        .textContent.trim();
       if (e.target.closest(".cart-counter__btn_plus")) {
         const getCart = JSON.parse(localStorage.getItem("cart"));
 
@@ -271,9 +306,9 @@ const addToCartProduct = () => {
     location.reload();
   });
 
-  addToCartBtn.addEventListener("click", () => {
+  addToCartBtn.addEventListener("click", (e) => {
+    e.preventDefault();
     addProductToCart();
-    location.reload();
   });
 };
 
