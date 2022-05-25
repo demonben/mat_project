@@ -309,6 +309,7 @@ const addToCartProduct = () => {
   addToCartBtn.addEventListener("click", (e) => {
     e.preventDefault();
     addProductToCart();
+    counter()
   });
 };
 
