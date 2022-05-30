@@ -2555,7 +2555,10 @@ ul {
 .accordion-item__plus span:last-of-type {
   transform: rotate(90deg);
 }
-
+/* cart */
+.cart_id{
+  display: none;
+}
 /* cartIcon */
 
 .cart-icon{
