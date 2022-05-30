@@ -79,9 +79,10 @@ const sendingCartData = async () => {
     },
     body: "hello body",
   });
-  const content = await response.json();
-
-  console.log(content);
+  window.localStorage.removeItem("cart")
+  alert("Заказ оформлен успешно, менеджер скоро свяжется с вами");
+  counter();
+  location.reload();
 };
 
 const formValidate = (name, phone) => {

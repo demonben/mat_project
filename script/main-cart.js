@@ -120,9 +120,10 @@ const sendingCartData = async () => {
       body: "hello body",
     }
   );
-  const content = await response.json();
-
-  console.log(content);
+  window.localStorage.removeItem("cart")
+  alert("Заказ оформлен успешно, менеджер скоро свяжется с вами");
+  counter();
+  location.reload();
 };
 
 const formValidate = (name, phone) => {
@@ -208,9 +209,9 @@ const addToCartProduct = () => {
 
           price: appData.fullPrice,
 
-          color: appData.skinColorName,
+          skinColor: appData.skinColorName,
 
-          colorStr: appData.colorStrName,
+          strColor: appData.colorStrName,
 
           addOptions: appData.otherServiceName,
         };
@@ -226,9 +227,9 @@ const addToCartProduct = () => {
 
           price: appData.fullPrice,
 
-          color: appData.skinColorName,
+          skinColor: appData.skinColorName,
 
-          colorStr: appData.colorStr,
+          strColor: appData.colorStr,
 
           addOptions: appData.otherServiceName,
         },

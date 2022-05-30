@@ -67,7 +67,6 @@ const collectingCustomerData = (name, lastName, phone) => {
 
 const sendingCartData = async () => {
   let cart = localStorage.getItem("cart")
-  console.log(reqBody);
   const response = await fetch(`https://the-mat.ru/mail/?data=${cart}&customer_data=${customerCartData}`, {
     mode: "no-cors",
     method: "POST",
@@ -76,9 +75,13 @@ const sendingCartData = async () => {
     },
     body: "hello body",
   });
-  const content = await response.json();
+  // const content = await response.json();
 
-  console.log(content);
+  // console.log(content);
+  window.localStorage.removeItem("cart")
+  alert("Заказ оформлен успешно, менеджер скоро свяжется с вами");
+  counter();
+  location.reload();
 };
 
 const formValidate = (name, phone) => {
