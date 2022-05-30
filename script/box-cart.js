@@ -192,9 +192,9 @@ const boxCart = () => {
                                   item.endingColor
                                 }</span>
                             </span>
-                            <span class="cart__id">
-                            <span class="cart__id_num">${item.id}</span>
-                        </span>
+                            <div class="cart_id">
+                        ${item.id}
+                             </div>
                         </div>
                         <div class="cart-counter">
                             <div class="cart-counter__btn cart-counter__btn_minus">
@@ -238,7 +238,7 @@ const boxCart = () => {
           size: settings.size,
           name: settings.size,
           price: settings.price,
-          id: settings.id,
+          id: settings.size,
         };
       }
     } else {
@@ -251,7 +251,7 @@ const boxCart = () => {
           size: settings.size,
           name: settings.size,
           price: settings.price,
-          id: settings.id,
+          id: settings.size,
         },
       };
     }
@@ -268,7 +268,7 @@ const boxCart = () => {
     if (e.target.closest(".cart__item")) {
       const cartID = e.target
         .closest(".cart__item")
-        .querySelector(".cart__name")
+        .querySelector(".cart_id")
         .textContent.trim();
       if (e.target.closest(".cart-counter__btn_plus")) {
         const getCart = JSON.parse(localStorage.getItem("cart"));
