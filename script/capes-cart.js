@@ -63,6 +63,7 @@ const collectingCustomerData = (name, lastName, phone) => {
   customerCartData.personalData.name = name;
   customerCartData.personalData.lastName = lastName;
   customerCartData.personalData.phone = phone;
+  customerCartData.personalData.email = email;
 
 };
 
