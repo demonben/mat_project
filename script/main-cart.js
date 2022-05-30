@@ -152,10 +152,11 @@ const addToCartProduct = () => {
         item.strColor
       }
                             </span>
-                            <span class="cart__id">
-                                id: <span class="cart__id_num">${item.id}</span>
-                            </span>
+                            
                         </div>
+                        <div class="cart_id">
+                        ${item.id}
+                    </div>
                         <div class="cart-counter">
                             <div class="cart-counter__btn cart-counter__btn_minus">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" fill="none"> <path d="M14 31H50" stroke="#E42E3A" stroke-width="2" stroke-miterlimit="10"/> <path d="M32 62.999C49.1203 62.999 62.999 49.1203 62.999 32C62.999 14.8797 49.1203 1.00098 32 1.00098C14.8797 1.00098 1.00101 14.8797 1.00101 32C1.00101 49.1203 14.8797 62.999 32 62.999Z" stroke="#E42E3A" stroke-width="2" stroke-miterlimit="10"/> </svg>
@@ -170,6 +171,7 @@ const addToCartProduct = () => {
                         <div class="cart__price">
                             ${+item.price * +item.count}
                         </div>
+                       
                         <button class="cart__del">
                             <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" fill="none"> <path d="M18.947 17.1533L45.045 43.0563" stroke="#E42E3A" stroke-width="2" stroke-miterlimit="10"/> <path d="M19.045 43.1527L44.947 17.0557" stroke="#E42E3A" stroke-width="2" stroke-miterlimit="10"/> <path d="M32 62.999C49.1203 62.999 62.999 49.1203 62.999 32C62.999 14.8797 49.1203 1.00098 32 1.00098C14.8797 1.00098 1.00101 14.8797 1.00101 32C1.00101 49.1203 14.8797 62.999 32 62.999Z" stroke="#E42E3A" stroke-width="2" stroke-miterlimit="10"/> </svg>
                         </button>
@@ -247,7 +249,7 @@ const addToCartProduct = () => {
     if (e.target.closest(".cart__item")) {
       const cartID = e.target
         .closest(".cart__item")
-        .querySelector(".cart__name")
+        .querySelector(".cart_id")
         .textContent.trim();
       if (e.target.closest(".cart-counter__btn_plus")) {
         const getCart = JSON.parse(localStorage.getItem("cart"));
