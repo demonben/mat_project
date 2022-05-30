@@ -66,8 +66,10 @@ const collectingCustomerData = (name, lastName, phone) => {
 };
 
 const sendingCartData = async () => {
+  let customerCartDataRequest = JSON.stringify(customerCartData)
+
   let cart = localStorage.getItem("cart")
-  const response = await fetch(`https://the-mat.ru/mail/?data=${cart}&customer_data=${customerCartData}`, {
+  const response = await fetch(`https://the-mat.ru/mail/?data=${cart}&customer_data=${customerCartDataRequest}`, {
     mode: "no-cors",
     method: "POST",
     headers: {
@@ -173,9 +175,6 @@ const pillowsCart = () => {
                             </h3>
                             <span style="margin: 0;" class="cart__color">
                                 ${item.skinColor}<br>${item.strColor}
-                            </span>
-                            <span class="cart__id">
-                                id: <span class="cart__id_num">${item.id}</span>
                             </span>
                             <div class="cart_id">
                         ${item.id}

@@ -67,10 +67,11 @@ const collectingCustomerData = (name, lastName, phone) => {
 };
 
 const sendingCartData = async () => {
+  let customerCartDataRequest = JSON.stringify(customerCartData)
   let cart = localStorage.getItem("cart")
   let reqBody = JSON.stringify({ a: 1, b: "Textual content" });
   console.log(reqBody);
-  const response = await fetch(`https://the-mat.ru/mail/?data=${cart}&customer_data=${customerCartData}`, {
+  const response = await fetch(`https://the-mat.ru/mail/?data=${cart}&customer_data=${customerCartDataRequest}`, {
     mode: "no-cors",
     method: "POST",
     headers: {
