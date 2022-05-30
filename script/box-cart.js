@@ -354,7 +354,7 @@ const boxCart = () => {
 
   cartClose.addEventListener("click", () => {
     overlayCart.classList.remove("overlay_active");
-    location.reload();
+    counter();
   });
 
   buttonBuy.addEventListener("click", (e) => {

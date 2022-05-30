@@ -303,7 +303,7 @@ const addToCartProduct = () => {
 
   cartClose.addEventListener("click", () => {
     overlayCart.classList.remove("overlay_active");
-    location.reload();
+    counter();
   });
 
   addToCartBtn.addEventListener("click", (e) => {
