@@ -2276,6 +2276,7 @@ ul {
   height: 100%;
 }
 .cart__info {
+  width: 120px;
   font-size: 13px;
   display: flex;
   flex-direction: column;
